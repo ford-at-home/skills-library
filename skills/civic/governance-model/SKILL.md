@@ -2,7 +2,8 @@
 description: "Define how the event is governed: the organizing body's structure,"
 skill_number: "04"
 skill_id: governance-model
-name: Governance Model
+name: governance-model
+display_name: "Governance Model"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

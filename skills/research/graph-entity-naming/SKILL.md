@@ -1,5 +1,6 @@
 ---
-name: graph_entity_naming
+name: graph-entity-naming
+display_name: "graph_entity_naming"
 description: Rules for what a knowledge-graph node may be named after, and an audit script that finds junk labels. Use when writing or reviewing extraction parsers, when a graph shows nonsense node titles, when deciding what becomes an entity versus evidence, or before publishing regenerated graph data.
 user-invocable: true
 metadata:

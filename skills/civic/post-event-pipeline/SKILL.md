@@ -2,7 +2,8 @@
 description: "Convert the event's outputs (submissions + AI evaluation + judging"
 skill_number: "16"
 skill_id: post-event-pipeline
-name: Post-Event Pipeline
+name: post-event-pipeline
+display_name: "Post-Event Pipeline"
 version: 1.0.0
 status: initial
 lifecycle_stage: post-event

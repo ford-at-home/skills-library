@@ -2,7 +2,8 @@
 description: "Anchor the event in a real, public, government-owned strategic plan"
 skill_number: "01"
 skill_id: civic-alignment
-name: Civic Alignment
+name: civic-alignment
+display_name: "Civic Alignment"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

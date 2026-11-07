@@ -2,7 +2,8 @@
 description: "Resolve everything upstream into the operational artifacts the"
 skill_number: "12"
 skill_id: event-operations-plan
-name: Event Operations Plan
+name: event-operations-plan
+display_name: "Event Operations Plan"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

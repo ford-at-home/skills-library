@@ -1,5 +1,6 @@
 ---
-name: knowledge_graph_pipeline
+name: knowledge-graph-pipeline
+display_name: "knowledge_graph_pipeline"
 description: Change the knowledge-graph extractor and publish the result across all seven pillar repos and the rvahacks site. Use when editing anything under knowledge-graph/extraction/, when graph data needs regenerating, when running the release check, or when asked to publish or deploy graph changes to rvahacks.org.
 user-invocable: true
 metadata:

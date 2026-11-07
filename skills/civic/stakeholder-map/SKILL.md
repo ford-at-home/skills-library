@@ -2,7 +2,8 @@
 description: "Identify every category of stakeholder, every named partner, and"
 skill_number: "03"
 skill_id: stakeholder-map
-name: Stakeholder Map
+name: stakeholder-map
+display_name: "Stakeholder Map"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

@@ -2,7 +2,8 @@
 description: "Decide the track structure: how many tracks, what each is called,"
 skill_number: "05"
 skill_id: track-strategy
-name: Track Strategy
+name: track-strategy
+display_name: "Track Strategy"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

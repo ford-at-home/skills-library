@@ -2,7 +2,8 @@
 description: "Convert each track into named, scoped, data-grounded problem"
 skill_number: "06"
 skill_id: problem-statement-development
-name: Problem Statement Development
+name: problem-statement-development
+display_name: "Problem Statement Development"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

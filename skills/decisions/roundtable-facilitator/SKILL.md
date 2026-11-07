@@ -655,7 +655,7 @@ The `PARALLEL_API_KEY` lives in the workspace `.env` file at the repo root. Ever
 
 ```bash
 # Read from .env
-export PARALLEL_API_KEY=$(grep PARALLEL_API_KEY /Users/williamprior/Development/GitHub/hackathon/.env | cut -d= -f2)
+export PARALLEL_API_KEY=$(grep PARALLEL_API_KEY <repo>/.env | cut -d= -f2)
 ```
 
 Do NOT hardcode the key. Do NOT include it in conversation logs or output files.

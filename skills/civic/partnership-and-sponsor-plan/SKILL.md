@@ -2,7 +2,8 @@
 description: "Define how the event raises money, in-kind contributions, and"
 skill_number: "08"
 skill_id: partnership-and-sponsor-plan
-name: Partnership and Sponsor Plan
+name: partnership-and-sponsor-plan
+display_name: "Partnership and Sponsor Plan"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

@@ -2,7 +2,8 @@
 description: "Decide and document every tool the event runs on: communications,"
 skill_number: "13"
 skill_id: technology-setup
-name: Technology Setup
+name: technology-setup
+display_name: "Technology Setup"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

@@ -2,7 +2,8 @@
 description: "Recruit, onboard, and schedule the two cohorts that make an event"
 skill_number: "11"
 skill_id: mentor-volunteer-ops
-name: Mentor and Volunteer Ops
+name: mentor-volunteer-ops
+display_name: "Mentor and Volunteer Ops"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

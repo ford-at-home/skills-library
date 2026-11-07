@@ -2,7 +2,8 @@
 description: "Design what a participant actually goes through: register, arrive,"
 skill_number: "10"
 skill_id: participant-experience-plan
-name: Participant Experience Plan
+name: participant-experience-plan
+display_name: "Participant Experience Plan"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

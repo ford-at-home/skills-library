@@ -109,7 +109,7 @@ Use for complex research questions that require multi-source synthesis (ecosyste
 
 **Step 1 — Fire the query:**
 ```bash
-export PARALLEL_API_KEY=$(grep PARALLEL_API_KEY /Users/williamprior/Development/GitHub/hackathon/.env | cut -d= -f2)
+export PARALLEL_API_KEY=$(grep PARALLEL_API_KEY <repo>/.env | cut -d= -f2)
 
 curl -s -X POST "https://api.parallel.ai/v1/tasks/runs" \
   -H "x-api-key: $PARALLEL_API_KEY" \

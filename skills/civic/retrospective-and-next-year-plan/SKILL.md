@@ -2,7 +2,8 @@
 description: "Close the loop. Compare what actually happened to what was"
 skill_number: "18"
 skill_id: retrospective-and-next-year-plan
-name: Retrospective and Next-Year Plan
+name: retrospective-and-next-year-plan
+display_name: "Retrospective and Next-Year Plan"
 version: 1.0.0
 status: initial
 lifecycle_stage: post-event

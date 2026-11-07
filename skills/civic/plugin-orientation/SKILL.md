@@ -2,7 +2,8 @@
 description: "Inspect the repository, classify what planning work is present vs."
 skill_number: "00"
 skill_id: plugin-orientation
-name: Plugin Orientation
+name: plugin-orientation
+display_name: "Plugin Orientation"
 version: 1.0.0
 status: initial
 lifecycle_stage: meta

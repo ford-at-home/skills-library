@@ -2,7 +2,8 @@
 description: "Run a structured AI evaluation pass over the full submission corpus"
 skill_number: "15"
 skill_id: ai-assisted-evaluation
-name: AI-Assisted Evaluation
+name: ai-assisted-evaluation
+display_name: "AI-Assisted Evaluation"
 version: 1.0.0
 status: initial
 lifecycle_stage: post-event

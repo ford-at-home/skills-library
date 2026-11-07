@@ -1,5 +1,6 @@
 ---
-name: run_knowledge_graph
+name: run-knowledge-graph
+display_name: "run_knowledge_graph"
 description: Install and run the Knowledge Graph and 3D Funding Explorer visualization
 user-invocable: true
 allowed-tools: Bash(npm:*), Bash(make:*), Bash(node:*)

@@ -2,7 +2,8 @@
 description: "Plan and stage the public communications that bring participants,"
 skill_number: "09"
 skill_id: community-outreach-plan
-name: Community Outreach Plan
+name: community-outreach-plan
+display_name: "Community Outreach Plan"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

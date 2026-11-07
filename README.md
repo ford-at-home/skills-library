@@ -1,6 +1,6 @@
 # skills-library
 
-131 agent skills by Ford Prior, in 8 categories, collected from 15 repositories.
+145 agent skills by Ford Prior, in 8 categories, collected from 16 repositories.
 
 **Find one fast:** every skill has a record in [`index.json`](index.json): name, description, category, tags, source repo and install command.
 
@@ -11,7 +11,7 @@ correctly without the skill? If yes, it is packaging rather than capability, and
 place: enforcement the published prose lacks (a gate, a refusal condition, a required output shape), or a failure
 that is silent. Ten skills failed that bar; [here they are, with the public skill that does each job better](NOT-SHIPPED.md).
 
-**Collected (98).** Skills written inside Ford's projects: the Amazonian suite, Pace Layers, the
+**Collected (112).** Skills written inside Ford's projects: the Amazonian suite, Pace Layers, the
 civic hackathon toolkit, the RVA Hacks pillar research environments, Hardcopy Draft, OpenClaw and Jungl3. They have
 not been through the deletion review yet. Each record names the repo and path it came from.
 
@@ -45,7 +45,7 @@ templates, failure-mode catalogues, configuration schemas. Skills that arrived w
 | [Evaluation & scoring](#evaluation) | 8 | Rubrics, benchmarks and scoring models that survive being contested. |
 | [Research & evidence](#research) | 22 | Finding, verifying and keeping a corpus of evidence usable. |
 | [Writing & communication](#writing) | 10 | Prose that has to land: decision docs, outreach, rollouts. |
-| [Engineering & operations](#engineering) | 22 | Changing live systems safely, deploying and running agents. |
+| [Engineering & operations](#engineering) | 36 | Changing live systems safely, deploying and running agents. |
 | [Product discovery & prototyping](#product) | 15 | From problem to tested prototype: JTBD, MVPs, sprints, demos. |
 | [Civic programs & hackathons](#civic) | 22 | Planning and running a civic hackathon end to end. |
 | [Org change & cadence](#org-change) | 16 | Plan change at the speed each layer moves, and make it stick. |
@@ -136,10 +136,22 @@ templates, failure-mode catalogues, configuration schemas. Skills that arrived w
 | Skill | What it does | From |
 |---|---|---|
 | [`adr-author`](skills/engineering/adr-author/) | Write a new Architecture Decision Record for Jungl3 under docs/decisions/, matching the Nygard-trimmed format established by ADRs 0001–0003. Use… | `jungl3` |
+| [`api-debugging`](skills/engineering/api-debugging/) | Diagnose and fix Lambda API endpoint issues, data transformation problems, and DynamoDB access patterns. | `socratic-ai-benchmarks` |
+| [`aws-deploy`](skills/engineering/aws-deploy/) | This skill automates the complete deployment lifecycle: | `socratic-ai-benchmarks` |
+| [`aws-ops`](skills/engineering/aws-ops/) | Monitor and troubleshoot the deployed Socratic AI Benchmarks platform on AWS. | `socratic-ai-benchmarks` |
+| [`bench-clean-run`](skills/engineering/bench-clean-run/) | This skill automates the repetitive task of clearing old benchmark data and starting fresh runs. It: | `socratic-ai-benchmarks` |
+| [`benchmark-ops`](skills/engineering/benchmark-ops/) | Run and analyze Socratic AI benchmarks locally or on AWS. | `socratic-ai-benchmarks` |
 | [`billing-and-credits`](skills/engineering/billing-and-credits/) | Change anything money-adjacent — credit packs, the credit ledger, reservations, Stripe checkout, the Stripe webhook, purchase records,… | `cozy-core-foundation` |
+| [`chart-debugging`](skills/engineering/chart-debugging/) | Diagnose and fix chart rendering issues, data scaling problems, and visualization bugs. | `socratic-ai-benchmarks` |
+| [`code-quality`](skills/engineering/code-quality/) | Maintain high code quality with automated testing, linting, and security checks. | `socratic-ai-benchmarks` |
 | ★ [`compliance-control-audit`](skills/engineering/compliance-control-audit/) | Audit running cloud infrastructure against a named control set and produce findings an auditor can re-derive and an engineer can act on. Reports… | `skills-library` |
 | ★ [`corpus-transform`](skills/engineering/corpus-transform/) | Design an expensive, long-running transformation over a large corpus so that a crash loses at most one item, a resume neither duplicates nor skips… | `skills-library` |
+| [`docs-and-methodology`](skills/engineering/docs-and-methodology/) | Update documentation, methodology pages, and homepage content to reflect framework changes or clarifications. | `socratic-ai-benchmarks` |
+| [`git-commit-deploy`](skills/engineering/git-commit-deploy/) | Standard workflow for committing code changes, deploying to AWS, and pushing to GitHub. | `socratic-ai-benchmarks` |
+| [`judge-inspect`](skills/engineering/judge-inspect/) | This skill analyzes judge evaluation data to help debug scoring problems: | `socratic-ai-benchmarks` |
+| [`lambda-logs`](skills/engineering/lambda-logs/) | This skill streams and analyzes Lambda function logs: | `socratic-ai-benchmarks` |
 | [`mobile-ui-polish`](skills/engineering/mobile-ui-polish/) | Refine the existing Hardcopy Draft UI mobile-first without redesigning it — responsive layout, touch targets, safe areas, keyboard behavior,… | `cozy-core-foundation` |
+| [`model-config-and-test`](skills/engineering/model-config-and-test/) | Add new AI models to the benchmark suite, configure their parameters, run test invocations, and verify integration. | `socratic-ai-benchmarks` |
 | [`model-selection-and-spend`](skills/engineering/model-selection-and-spend/) | Decide which Cursor model class to use, when to escalate to a premium model, and how to keep spend within policy. Use for tasks mentioning model… | `cozy-core-foundation` |
 | [`multi-agent-coordination`](skills/engineering/multi-agent-coordination/) | Coordinate with the Lovable agent through the docs/coordination/ inbox/outbox protocol — reading incoming requests, filing work items with WI-nnnn… | `cozy-core-foundation` |
 | ★ [`multi-agent-turn-taking`](skills/engineering/multi-agent-turn-taking/) | Decide which agent or persona speaks next in a shared live conversation, running a deterministic blocking gate first and letting a model arbitrate… | `skills-library` |
@@ -157,6 +169,8 @@ templates, failure-mode catalogues, configuration schemas. Skills that arrived w
 | [`run-orchestration-change`](skills/engineering/run-orchestration-change/) | Change the agent-run orchestration and cost-accounting subsystem — dispatch, webhooks, the reconciler, run state machine, idempotency keys,… | `cozy-core-foundation` |
 | ★ [`subsystem-change-safety`](skills/engineering/subsystem-change-safety/) | Change a subsystem that already has users or data depending on it, where a mistake is expensive and does not announce itself. Establishes a… | `skills-library` |
 | [`supabase-change`](skills/engineering/supabase-change/) | Make safe Supabase backend changes — schema migrations, RLS policies, Edge Functions, config.toml, storage policies, backend secrets. Use for tasks… | `cozy-core-foundation` |
+| [`test-and-deploy`](skills/engineering/test-and-deploy/) | Comprehensive testing and deployment workflow for Socratic AI Benchmarks. | `socratic-ai-benchmarks` |
+| [`ui-deploy-pipeline`](skills/engineering/ui-deploy-pipeline/) | One-command deployment for UI changes to CloudFront with CDK, testing, and git operations. | `socratic-ai-benchmarks` |
 
 ## Product discovery & prototyping
 <a id="product"></a>

@@ -2,7 +2,8 @@
 description: "Convert civic alignment into a small set of documents the"
 skill_number: "02"
 skill_id: event-charter
-name: Event Charter
+name: event-charter
+display_name: "Event Charter"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

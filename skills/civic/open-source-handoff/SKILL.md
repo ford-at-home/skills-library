@@ -2,7 +2,8 @@
 description: "Define how the event's outputs become public, durable artifacts the"
 skill_number: "17"
 skill_id: open-source-handoff
-name: Open-Source Handoff
+name: open-source-handoff
+display_name: "Open-Source Handoff"
 version: 1.0.0
 status: initial
 lifecycle_stage: post-event

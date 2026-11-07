@@ -1,5 +1,7 @@
 # What we didn't ship
 
+> **Scope.** This page explains cuts from the **Reviewed** tier (marked ★ in the README). A few skills cut here, such as `correction-of-errors` and `working-backwards-prfaq`, still ship in the **Collected** tier as part of the projects they came from (the Amazonian suite, Jungl3). They have not passed this review.
+
 Ten skills were written and then deleted, or rejected before they were written.
 This page exists because it is the only honest way to tell you what the bar was.
 

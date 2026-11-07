@@ -2,7 +2,8 @@
 description: "For every dataset the problem statements reference, answer four"
 skill_number: "07"
 skill_id: data-readiness
-name: Data Readiness
+name: data-readiness
+display_name: "Data Readiness"
 version: 1.0.0
 status: initial
 lifecycle_stage: pre-event

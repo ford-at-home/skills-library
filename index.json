@@ -30,7 +30,7 @@
       "id": "engineering",
       "name": "Engineering & operations",
       "description": "Changing live systems safely, deploying and running agents.",
-      "count": 22
+      "count": 36
     },
     {
       "id": "product",
@@ -93,12 +93,13 @@
       ],
       "source_paths": [
         "ford-at-home/skills-library:dissent-before-commit/SKILL.md",
+        "local:~/Development/GitHub/skills/dissent-before-commit/SKILL.md (Ford's private working folder; not on GitHub)",
         "ford-at-home/amazonian:skills/12-dissent-before-commit/SKILL.md"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill dissent-before-commit",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/decisions/dissent-before-commit"
     },
     {
@@ -116,12 +117,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:initiative-thesis-review/SKILL.md"
+        "ford-at-home/skills-library:initiative-thesis-review/SKILL.md",
+        "local:~/Development/GitHub/skills/initiative-thesis-review/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill initiative-thesis-review",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/decisions/initiative-thesis-review"
     },
     {
@@ -210,12 +212,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:multi-persona-roundtable/SKILL.md"
+        "ford-at-home/skills-library:multi-persona-roundtable/SKILL.md",
+        "local:~/Development/GitHub/skills/multi-persona-roundtable/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill multi-persona-roundtable",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/decisions/multi-persona-roundtable"
     },
     {
@@ -233,12 +236,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:portfolio-reallocation-review/SKILL.md"
+        "ford-at-home/skills-library:portfolio-reallocation-review/SKILL.md",
+        "local:~/Development/GitHub/skills/portfolio-reallocation-review/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill portfolio-reallocation-review",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/decisions/portfolio-reallocation-review"
     },
     {
@@ -278,12 +282,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:principles-alignment-review/SKILL.md"
+        "ford-at-home/skills-library:principles-alignment-review/SKILL.md",
+        "local:~/Development/GitHub/skills/principles-alignment-review/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill principles-alignment-review",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/decisions/principles-alignment-review"
     },
     {
@@ -454,12 +459,13 @@
       ],
       "source_paths": [
         "ford-at-home/skills-library:ambitious-goal-grading/SKILL.md",
+        "local:~/Development/GitHub/skills/ambitious-goal-grading/SKILL.md (Ford's private working folder; not on GitHub)",
         "ford-at-home/amazonian:skills/11-ambitious-goal-grading/SKILL.md"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill ambitious-goal-grading",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/evaluation/ambitious-goal-grading"
     },
     {
@@ -478,12 +484,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:anchored-rubric-design/SKILL.md"
+        "ford-at-home/skills-library:anchored-rubric-design/SKILL.md",
+        "local:~/Development/GitHub/skills/anchored-rubric-design/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill anchored-rubric-design",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/evaluation/anchored-rubric-design"
     },
     {
@@ -502,12 +509,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:auditable-scoring-model/SKILL.md"
+        "ford-at-home/skills-library:auditable-scoring-model/SKILL.md",
+        "local:~/Development/GitHub/skills/auditable-scoring-model/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill auditable-scoring-model",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/evaluation/auditable-scoring-model"
     },
     {
@@ -526,12 +534,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:defensible-submission-scoring/SKILL.md"
+        "ford-at-home/skills-library:defensible-submission-scoring/SKILL.md",
+        "local:~/Development/GitHub/skills/defensible-submission-scoring/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill defensible-submission-scoring",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/evaluation/defensible-submission-scoring"
     },
     {
@@ -573,12 +582,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:llm-behavior-benchmark/SKILL.md"
+        "ford-at-home/skills-library:llm-behavior-benchmark/SKILL.md",
+        "local:~/Development/GitHub/skills/llm-behavior-benchmark/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill llm-behavior-benchmark",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/evaluation/llm-behavior-benchmark"
     },
     {
@@ -597,12 +607,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:operational-message-friction/SKILL.md"
+        "ford-at-home/skills-library:operational-message-friction/SKILL.md",
+        "local:~/Development/GitHub/skills/operational-message-friction/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill operational-message-friction",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/evaluation/operational-message-friction"
     },
     {
@@ -644,12 +655,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:architecture-note-routing/SKILL.md"
+        "ford-at-home/skills-library:architecture-note-routing/SKILL.md",
+        "local:~/Development/GitHub/skills/architecture-note-routing/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill architecture-note-routing",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/research/architecture-note-routing"
     },
     {
@@ -754,12 +766,13 @@
       ],
       "source_paths": [
         "ford-at-home/skills-library:customer-interview-synthesis/SKILL.md",
+        "local:~/Development/GitHub/skills/customer-interview-synthesis/SKILL.md (Ford's private working folder; not on GitHub)",
         "ford-at-home/amazonian:skills/08-customer-interview-synthesis/SKILL.md"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill customer-interview-synthesis",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/research/customer-interview-synthesis"
     },
     {
@@ -849,12 +862,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:evidence-grounded-verification/SKILL.md"
+        "ford-at-home/skills-library:evidence-grounded-verification/SKILL.md",
+        "local:~/Development/GitHub/skills/evidence-grounded-verification/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill evidence-grounded-verification",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/research/evidence-grounded-verification"
     },
     {
@@ -943,12 +957,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:markdown-knowledge-graph-traversal/SKILL.md"
+        "ford-at-home/skills-library:markdown-knowledge-graph-traversal/SKILL.md",
+        "local:~/Development/GitHub/skills/markdown-knowledge-graph-traversal/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill markdown-knowledge-graph-traversal",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/research/markdown-knowledge-graph-traversal"
     },
     {
@@ -967,12 +982,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:markdown-memory-schema-maintenance/SKILL.md"
+        "ford-at-home/skills-library:markdown-memory-schema-maintenance/SKILL.md",
+        "local:~/Development/GitHub/skills/markdown-memory-schema-maintenance/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill markdown-memory-schema-maintenance",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/research/markdown-memory-schema-maintenance"
     },
     {
@@ -1155,12 +1171,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:research-corpus-self-indexing/SKILL.md"
+        "ford-at-home/skills-library:research-corpus-self-indexing/SKILL.md",
+        "local:~/Development/GitHub/skills/research-corpus-self-indexing/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill research-corpus-self-indexing",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/research/research-corpus-self-indexing"
     },
     {
@@ -1317,12 +1334,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:communication-rollout-planning/SKILL.md"
+        "ford-at-home/skills-library:communication-rollout-planning/SKILL.md",
+        "local:~/Development/GitHub/skills/communication-rollout-planning/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill communication-rollout-planning",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/writing/communication-rollout-planning"
     },
     {
@@ -1341,12 +1359,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:decision-prose-linting/SKILL.md"
+        "ford-at-home/skills-library:decision-prose-linting/SKILL.md",
+        "local:~/Development/GitHub/skills/decision-prose-linting/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill decision-prose-linting",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/writing/decision-prose-linting"
     },
     {
@@ -1365,12 +1384,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:paper-markup-revision/SKILL.md"
+        "ford-at-home/skills-library:paper-markup-revision/SKILL.md",
+        "local:~/Development/GitHub/skills/paper-markup-revision/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill paper-markup-revision",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/writing/paper-markup-revision"
     },
     {
@@ -1482,12 +1502,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:voice-faithful-drafting/SKILL.md"
+        "ford-at-home/skills-library:voice-faithful-drafting/SKILL.md",
+        "local:~/Development/GitHub/skills/voice-faithful-drafting/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill voice-faithful-drafting",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/writing/voice-faithful-drafting"
     },
     {
@@ -1514,6 +1535,122 @@
       "path": "skills/engineering/adr-author"
     },
     {
+      "id": "api-debugging",
+      "name": "api-debugging",
+      "description": "Diagnose and fix Lambda API endpoint issues, data transformation problems, and DynamoDB access patterns.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "api",
+        "debugging"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/api-debugging.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill api-debugging",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/api-debugging"
+    },
+    {
+      "id": "aws-deploy",
+      "name": "aws-deploy",
+      "description": "This skill automates the complete deployment lifecycle:",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "aws",
+        "deploy"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/aws-deploy/skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill aws-deploy",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/aws-deploy"
+    },
+    {
+      "id": "aws-ops",
+      "name": "aws-ops",
+      "description": "Monitor and troubleshoot the deployed Socratic AI Benchmarks platform on AWS.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "aws",
+        "ops"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/aws-ops.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill aws-ops",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/aws-ops"
+    },
+    {
+      "id": "bench-clean-run",
+      "name": "bench-clean-run",
+      "description": "This skill automates the repetitive task of clearing old benchmark data and starting fresh runs. It:",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "bench",
+        "clean",
+        "run"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/bench-clean-run/skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill bench-clean-run",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/bench-clean-run"
+    },
+    {
+      "id": "benchmark-ops",
+      "name": "benchmark-ops",
+      "description": "Run and analyze Socratic AI benchmarks locally or on AWS.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "benchmark",
+        "ops"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/benchmark-ops.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill benchmark-ops",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/benchmark-ops"
+    },
+    {
       "id": "billing-and-credits",
       "name": "billing-and-credits",
       "description": "Change anything money-adjacent — credit packs, the credit ledger, reservations, Stripe checkout, the Stripe webhook, purchase records, refunds/chargebacks, the paywall, or the billing page. Use for tasks mentioning credits, balance, checkout, Stripe, prices, purchases, paywall, refunds, or \"Get credits\". The detailed money rules live in docs/BILLING.md; this skill routes you to them and to the code that implements them.",
@@ -1537,6 +1674,52 @@
       "path": "skills/engineering/billing-and-credits"
     },
     {
+      "id": "chart-debugging",
+      "name": "chart-debugging",
+      "description": "Diagnose and fix chart rendering issues, data scaling problems, and visualization bugs.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "chart",
+        "debugging"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/chart-debugging.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill chart-debugging",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/chart-debugging"
+    },
+    {
+      "id": "code-quality",
+      "name": "code-quality",
+      "description": "Maintain high code quality with automated testing, linting, and security checks.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "code",
+        "quality"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/code-quality.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill code-quality",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/code-quality"
+    },
+    {
       "id": "compliance-control-audit",
       "name": "compliance-control-audit",
       "description": "Audit running cloud infrastructure against a named control set and produce findings an auditor can re-derive and an engineer can act on. Reports what was not checked as loudly as what failed. Read-only; never changes infrastructure. Use before an audit window, after an infrastructure change, or when someone asks how compliant an account is. Trigger phrases include compliance audit, SOC 2 evidence, control gap analysis, are we compliant, findings report, security posture review, check our controls, audit readiness, CIS benchmark check.",
@@ -1552,12 +1735,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:compliance-control-audit/SKILL.md"
+        "ford-at-home/skills-library:compliance-control-audit/SKILL.md",
+        "local:~/Development/GitHub/skills/compliance-control-audit/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill compliance-control-audit",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/engineering/compliance-control-audit"
     },
     {
@@ -1575,13 +1759,107 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:corpus-transform/SKILL.md"
+        "ford-at-home/skills-library:corpus-transform/SKILL.md",
+        "local:~/Development/GitHub/skills/corpus-transform/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill corpus-transform",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/engineering/corpus-transform"
+    },
+    {
+      "id": "docs-and-methodology",
+      "name": "docs-and-methodology",
+      "description": "Update documentation, methodology pages, and homepage content to reflect framework changes or clarifications.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "docs",
+        "methodology"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/docs-and-methodology.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill docs-and-methodology",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/docs-and-methodology"
+    },
+    {
+      "id": "git-commit-deploy",
+      "name": "git-commit-deploy",
+      "description": "Standard workflow for committing code changes, deploying to AWS, and pushing to GitHub.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "git",
+        "commit",
+        "deploy"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/git-commit-deploy.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill git-commit-deploy",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/git-commit-deploy"
+    },
+    {
+      "id": "judge-inspect",
+      "name": "judge-inspect",
+      "description": "This skill analyzes judge evaluation data to help debug scoring problems:",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "judge",
+        "inspect"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/judge-inspect/skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill judge-inspect",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/judge-inspect"
+    },
+    {
+      "id": "lambda-logs",
+      "name": "lambda-logs",
+      "description": "This skill streams and analyzes Lambda function logs:",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "lambda",
+        "logs"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/lambda-logs/skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill lambda-logs",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/lambda-logs"
     },
     {
       "id": "mobile-ui-polish",
@@ -1605,6 +1883,30 @@
       "license": "MIT",
       "related_project": "hardcopy-draft",
       "path": "skills/engineering/mobile-ui-polish"
+    },
+    {
+      "id": "model-config-and-test",
+      "name": "model-config-and-test",
+      "description": "Add new AI models to the benchmark suite, configure their parameters, run test invocations, and verify integration.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "model",
+        "config",
+        "test"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/model-config-and-test.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill model-config-and-test",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/model-config-and-test"
     },
     {
       "id": "model-selection-and-spend",
@@ -1670,12 +1972,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:multi-agent-turn-taking/SKILL.md"
+        "ford-at-home/skills-library:multi-agent-turn-taking/SKILL.md",
+        "local:~/Development/GitHub/skills/multi-agent-turn-taking/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill multi-agent-turn-taking",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/engineering/multi-agent-turn-taking"
     },
     {
@@ -1694,12 +1997,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:multi-tenant-saas-isolation/SKILL.md"
+        "ford-at-home/skills-library:multi-tenant-saas-isolation/SKILL.md",
+        "local:~/Development/GitHub/skills/multi-tenant-saas-isolation/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill multi-tenant-saas-isolation",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/engineering/multi-tenant-saas-isolation"
     },
     {
@@ -1924,12 +2228,13 @@
       ],
       "source_paths": [
         "ford-at-home/skills-library:repository-orientation/SKILL.md",
+        "local:~/Development/GitHub/skills/repository-orientation/SKILL.md (Ford's private working folder; not on GitHub)",
         "ford-at-home/cozy-core-foundation:.cursor/skills/repository-orientation/SKILL.md"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill repository-orientation",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/engineering/repository-orientation"
     },
     {
@@ -1972,12 +2277,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:subsystem-change-safety/SKILL.md"
+        "ford-at-home/skills-library:subsystem-change-safety/SKILL.md",
+        "local:~/Development/GitHub/skills/subsystem-change-safety/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill subsystem-change-safety",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/engineering/subsystem-change-safety"
     },
     {
@@ -2002,6 +2308,52 @@
       "license": "MIT",
       "related_project": "hardcopy-draft",
       "path": "skills/engineering/supabase-change"
+    },
+    {
+      "id": "test-and-deploy",
+      "name": "test-and-deploy",
+      "description": "Comprehensive testing and deployment workflow for Socratic AI Benchmarks.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "test",
+        "deploy"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/test-and-deploy.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill test-and-deploy",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/test-and-deploy"
+    },
+    {
+      "id": "ui-deploy-pipeline",
+      "name": "ui-deploy-pipeline",
+      "description": "One-command deployment for UI changes to CloudFront with CDK, testing, and git operations.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "socratic",
+        "deploy",
+        "pipeline"
+      ],
+      "source_repos": [
+        "socratic-ai-institute/socratic-ai-benchmarks"
+      ],
+      "source_paths": [
+        "socratic-ai-institute/socratic-ai-benchmarks:.claude/skills/ui-deploy-pipeline.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill ui-deploy-pipeline",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "socratic-benchmarks",
+      "path": "skills/engineering/ui-deploy-pipeline"
     },
     {
       "id": "assumption-mapping",
@@ -2159,12 +2511,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:demo-production/SKILL.md"
+        "ford-at-home/skills-library:demo-production/SKILL.md",
+        "local:~/Development/GitHub/skills/demo-production/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill demo-production",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/product/demo-production"
     },
     {
@@ -2183,12 +2536,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:idea-to-landing-page/SKILL.md"
+        "ford-at-home/skills-library:idea-to-landing-page/SKILL.md",
+        "local:~/Development/GitHub/skills/idea-to-landing-page/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill idea-to-landing-page",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/product/idea-to-landing-page"
     },
     {
@@ -2384,12 +2738,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:prompt-driven-ui-rebuild/SKILL.md"
+        "ford-at-home/skills-library:prompt-driven-ui-rebuild/SKILL.md",
+        "local:~/Development/GitHub/skills/prompt-driven-ui-rebuild/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill prompt-driven-ui-rebuild",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/product/prompt-driven-ui-rebuild"
     },
     {
@@ -2853,12 +3208,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:pillar-program-design/SKILL.md"
+        "ford-at-home/skills-library:pillar-program-design/SKILL.md",
+        "local:~/Development/GitHub/skills/pillar-program-design/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill pillar-program-design",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/civic/pillar-program-design"
     },
     {
@@ -3293,12 +3649,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:meeting-decision-tracking/SKILL.md"
+        "ford-at-home/skills-library:meeting-decision-tracking/SKILL.md",
+        "local:~/Development/GitHub/skills/meeting-decision-tracking/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill meeting-decision-tracking",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/org-change/meeting-decision-tracking"
     },
     {
@@ -3340,12 +3697,13 @@
         "ford-at-home/skills-library"
       ],
       "source_paths": [
-        "ford-at-home/skills-library:recurring-mechanism-design/SKILL.md"
+        "ford-at-home/skills-library:recurring-mechanism-design/SKILL.md",
+        "local:~/Development/GitHub/skills/recurring-mechanism-design/SKILL.md (Ford's private working folder; not on GitHub)"
       ],
       "install": "npx skills add ford-at-home/skills-library --skill recurring-mechanism-design",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-06",
       "license": "MIT",
-      "related_project": null,
+      "related_project": "skills-library",
       "path": "skills/org-change/recurring-mechanism-design"
     },
     {

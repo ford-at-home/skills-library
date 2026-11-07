@@ -2,7 +2,8 @@
 description: "Define how the event evaluates and recognizes work: rubric, awards"
 skill_number: "14"
 skill_id: judging-system
-name: Judging System
+name: judging-system
+display_name: "Judging System"
 version: 1.0.0
 status: initial
 lifecycle_stage: event

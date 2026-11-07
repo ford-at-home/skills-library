@@ -1,0 +1,135 @@
+# Control registry. One entry per control. Copy and edit.
+#
+# The registry is the audit's scope statement. A control that is not in here
+# was not checked, and the report must say so. Never delete an entry to make a
+# report look better -- set `implemented: false` and let it appear in the
+# coverage table.
+#
+# The conditions below use AWS API call and field names, because that is where
+# they were written. The portable part is the three-part shape: one read-only
+# call, one field, one comparison with its threshold spelled out. Substitute your
+# provider's equivalents and the rest of the registry works unchanged.
+
+registry:
+  version: 1
+  # Every control ID that the audit was asked to cover, including ones with no
+  # check. Coverage is measured against this list, not against `controls`.
+  control_set:
+    - CC6.1
+    - CC6.3
+    - CC7.2
+    - A1.2
+
+controls:
+  # ---------------------------------------------------------------------------
+  database_not_internet_reachable:
+    control_ids: ["CC6.1", "CC6.3"]
+    # Optional cross-reference to an external compliance platform's test name.
+    external_test_id: "DB_PUBLIC_ACCESS_RESTRICTED"
+    intent: >
+      Managed databases must not be reachable from the public internet.
+    implemented: true
+    determination: audit          # audit | not-implemented | out-of-technical-scope
+
+    # Each condition must name the read-only call, the field, and the
+    # comparison. If you cannot fill all three, the control is not yet mapped.
+    conditions:
+      - id: public_flag
+        call: "rds:DescribeDBInstances"
+        field: "DBInstances[].PubliclyAccessible"
+        compare: "must equal false"
+      - id: subnet_egress
+        call: "ec2:DescribeRouteTables"
+        field: "RouteTables[].Routes[].GatewayId"
+        compare: "must not start with 'igw-' for any associated subnet"
+      - id: sg_ingress
+        call: "ec2:DescribeSecurityGroups"
+        field: "SecurityGroups[].IpPermissions[].IpRanges[].CidrIp"
+        compare: "must not equal 0.0.0.0/0 for any rule covering the engine port"
+
+    # A control fails if ANY condition fails. Conditions are not averaged.
+    combine: any-fail-is-fail
+
+    # Text handed to a human. The audit never performs this.
+    recommendation: >
+      Set PubliclyAccessible to false, move the instance to subnets with no
+      internet gateway route, and scope the ingress rule to known CIDRs.
+
+  # ---------------------------------------------------------------------------
+  privileged_users_have_mfa:
+    control_ids: ["CC6.1"]
+    intent: "Human users with console access must have MFA enrolled."
+    implemented: true
+    determination: audit
+    conditions:
+      - id: mfa_present
+        call: "iam:ListMFADevices"
+        field: "MFADevices[]"
+        compare: "must be non-empty for every user with a login profile"
+    combine: any-fail-is-fail
+    recommendation: "Enrol an MFA device, or remove the login profile."
+
+    # Exceptions suppress a finding. Each needs all five fields. An exception
+    # missing any field is not an exception -- report the finding.
+    exceptions:
+      - resource_id: "break-glass-operator"   # exact identifier, never a pattern
+        approved_by: "<role or person>"
+        approved_on: "2026-01-14"
+        expires_on: "2026-07-14"
+        compensating_control: "Credentials held offline; use alarms on console login."
+        # How the compensating control was confirmed to exist, and when. An
+        # unverified compensating control does not suppress a finding.
+        compensating_control_verified:
+          call: "cloudwatch:DescribeAlarms"
+          observed: "alarm 'console-login-breakglass' state OK"
+          on: "2026-01-14"
+
+  # ---------------------------------------------------------------------------
+  backup_failures_are_noticed:
+    control_ids: ["CC7.2", "A1.2"]
+    intent: >
+      Backup jobs run daily, failures raise an alert that reaches a human, and
+      failures are addressed within an agreed window.
+    implemented: true
+    determination: audit
+    conditions:
+      # Thresholds are part of the control. Write them down; do not leave them
+      # in the checking code where nobody reviewing the report can see them.
+      - id: recent_snapshot
+        call: "rds:DescribeDBSnapshots"
+        field: "DBSnapshots[].SnapshotCreateTime"
+        compare: "most recent must be within 24 hours"
+      - id: retention_set
+        call: "rds:DescribeDBInstances"
+        field: "DBInstances[].BackupRetentionPeriod"
+        compare: "must be >= 7 days"
+      - id: alert_reaches_human
+        call: "sns:ListSubscriptionsByTopic"
+        field: "Subscriptions[]"
+        compare: "at least 1 subscription not in PendingConfirmation"
+    combine: any-fail-is-fail
+    recommendation: >
+      Create an event subscription covering backup and failure categories and
+      confirm at least one subscriber on the target topic.
+
+  # ---------------------------------------------------------------------------
+  # Declared in control_set, no check exists. It still appears in the report.
+  vendor_risk_reviewed_annually:
+    control_ids: ["CC9.2"]
+    intent: "Third-party vendors are reviewed annually."
+    implemented: false
+    determination: out-of-technical-scope
+    reason: >
+      No infrastructure state expresses this. Evidence lives in a vendor review
+      record, not in an API response. Do not invent a proxy check.
+
+scope:
+  # The scope filter is part of every finding and every report header. A filter
+  # that silently excludes production turns an empty report into a false pass.
+  regions: ["us-east-1"]
+  environments: ["dev", "test", "prod"]
+  # Exclusions by exact identifier only. Wildcards belong in `review_patterns`.
+  excluded_resources: []
+  # Patterns you inherited and have not converted to exact identifiers yet.
+  # Every pattern here must be reported with the list of resources it matched.
+  review_patterns: []

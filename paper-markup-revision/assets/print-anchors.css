@@ -1,0 +1,470 @@
+/* print-anchors.css — US Letter markup stylesheet with S{n}P{m} block anchors.
+ *
+ * Re-based on a print implementation that is exercised by an automated
+ * fidelity suite: real Chromium via Playwright, rendered to PDF, with the
+ * anchors read back out of the PDF text layer and compared against an
+ * independent reference walker derived from the prose counting rule. The
+ * counting rule and the geometry below are that implementation's, not a
+ * fresh guess. See SKILL.md "What is verified" for exactly which parts of
+ * that carries over to this standalone copy and which do not.
+ *
+ * Use:
+ *   pandoc draft.md --standalone --css print-anchors.css -o draft.print.html
+ * then open draft.print.html and print it.
+ *
+ * Two deliberate deviations from the tested original:
+ *
+ *   1. No embedded fonts. The original inlines five woff2 faces as data URIs
+ *      specifically so that font metrics — and therefore line breaks, and
+ *      therefore pagination — are identical on every machine. A standalone
+ *      stylesheet cannot carry binary, so faces fall back to the OS here and
+ *      PAGE BREAKS vary between machines. ANCHOR VALUES DO NOT: the counters
+ *      run continuously in document order and never reference the page
+ *      number, so "S4P3" denotes the same block no matter where the breaks
+ *      land. Only "page two" style references are machine-dependent.
+ *
+ *   2. Anchors are always on. The original gates them behind
+ *      <body class="with-anchors">; pandoc emits a plain <body>, so the
+ *      selectors here are unscoped.
+ */
+
+/* The left margin is SPLIT between @page (0.5in) and body padding in print
+ * (1in). This is load-bearing and must not be "simplified" into a single
+ * 1.5in page margin. The print engine clips anything painted into the @page
+ * margin area, and the anchors are absolutely positioned to the left of the
+ * text column — so they have to live inside the page's content box to reach
+ * PDF and paper. The text column still starts exactly 1.5in from the paper
+ * edge. Collapsing the split makes the anchors vanish from paper while still
+ * looking correct in the on-screen preview.
+ *
+ * Geometry: Letter 8.5 x 11in, margins 1.5in top / 2in right / 1.5in bottom
+ * / 1.5in left, giving a 5in x 8in text block. The extra-wide right margin
+ * is pen space; anchors occupy the left. */
+@page {
+  size: letter;
+  margin: 1.5in 2in 1.5in 0.5in;
+
+  /* Folio. Defining a margin box at all also suppresses the browser's own
+   * furniture (URL, date, page number) on that edge. padding-left re-centers
+   * the folio over the text column, whose left edge is 1in inside this page
+   * box — see the split-margin note above.
+   *
+   * Page numbers in @page margin boxes need a recent Chromium. They are
+   * cosmetic: no anchor depends on them. */
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 8.5pt;
+    letter-spacing: 0.05em;
+    color: #666666;
+    padding-left: 1in;
+  }
+
+  /* Empty on purpose: defining the box suppresses the browser's bottom-right
+   * URL without printing anything of its own. The working space of the page
+   * stays unbranded. */
+  @bottom-right {
+    content: "";
+  }
+}
+
+/* ==========================================================================
+ * Base typography
+ * ========================================================================== */
+
+html {
+  /* Keep OS dark mode from inverting a document headed for paper. */
+  color-scheme: light;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12pt;
+  /* Generous leading is deliberate: it leaves room to write between lines. */
+  line-height: 1.7;
+  color: #1a1a1a;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+}
+
+/* In print the body carries the 1in inner half of the split left margin (see
+ * the note at @page): text column 1.5in from the paper edge, anchors inside
+ * the printable content box. */
+@media print {
+  body {
+    padding-left: 1in;
+  }
+}
+
+/* On screen, present the document as a Letter sheet with the exact @page
+ * margins, so line wrapping on screen matches the printed page one for one.
+ * The sheet keeps its true width on small screens (scroll, do not reflow);
+ * reflowing would break screen/print parity and mislead you about where the
+ * page breaks fall. */
+@media screen {
+  html {
+    background: #ececea;
+    padding: 24px 12px;
+  }
+  body {
+    box-sizing: border-box;
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    padding: 1.5in 2in 1.5in 1.5in;
+    background: #ffffff;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.14),
+      0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* The first block on page 1 sits flush at the top margin. */
+body > :first-child {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.25;
+  break-after: avoid;
+  page-break-after: avoid;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+h1 {
+  font-size: 20pt;
+  margin: 24pt 0 8pt;
+}
+h2 {
+  font-size: 16pt;
+  margin: 20pt 0 7pt;
+}
+h3 {
+  font-size: 13.5pt;
+  margin: 16pt 0 6pt;
+}
+h4 {
+  font-size: 12pt;
+  margin: 14pt 0 5pt;
+}
+h5 {
+  font-size: 11pt;
+  margin: 12pt 0 4pt;
+}
+h6 {
+  font-size: 10.5pt;
+  margin: 12pt 0 4pt;
+  font-style: italic;
+}
+
+p,
+li,
+blockquote {
+  orphans: 3;
+  widows: 3;
+}
+
+p {
+  margin: 7pt 0;
+  hyphens: auto;
+}
+
+ul,
+ol {
+  margin: 7pt 0;
+  padding-left: 22pt;
+}
+
+li {
+  margin: 3.5pt 0;
+  hyphens: auto;
+}
+
+li > ul,
+li > ol {
+  margin: 3.5pt 0;
+}
+
+blockquote {
+  margin: 10pt 0;
+  border-left: 2pt solid #999999;
+  padding-left: 12pt;
+  color: #333333;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+code {
+  font-family: Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: #f3f3f2;
+  padding: 0.5pt 2.5pt;
+  border-radius: 2pt;
+}
+
+pre {
+  font-family: Menlo, Consolas, monospace;
+  font-size: 9.5pt;
+  line-height: 1.5;
+  background: #f6f6f5;
+  border: 0.75pt solid #dddddd;
+  border-radius: 2pt;
+  margin: 10pt 0;
+  padding: 6pt 8pt;
+  /* Long lines wrap instead of overflowing the text block. */
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2pt;
+  /* Bare autolinked URLs can be arbitrarily long; break anywhere. */
+  overflow-wrap: anywhere;
+}
+
+img {
+  max-width: 100%;
+  /* Never taller than the 8in page box, leaving headroom for the anchor of
+   * the block that follows. */
+  max-height: 7in;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+figure {
+  margin: 12pt 0;
+  text-align: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+figure img {
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  font-size: 10pt;
+  color: #555555;
+  margin-top: 4pt;
+}
+
+hr {
+  border: none;
+  border-top: 0.75pt solid #bbbbbb;
+  margin: 18pt 0;
+}
+
+/* Long tables break across pages rather than overflowing: the header row
+ * repeats on every page and rows never split mid-row. Do NOT put
+ * break-inside: avoid on the table itself — a table taller than the text
+ * block then overflows the page and is clipped. */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10pt 0;
+  font-size: 10.5pt;
+  line-height: 1.5;
+}
+
+thead {
+  display: table-header-group;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+tr {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+th,
+td {
+  border: 0.75pt solid #999999;
+  padding: 4pt 6pt;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+
+th {
+  background: #f0efed;
+}
+
+@media print {
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+ * Pre-printed block anchors (S{n}P{m} labels in the left margin)
+ *
+ * THIS IS THE AUTHORITATIVE COUNTING RULE. An agent resolving "S4P3" must
+ * count blocks exactly the way these counters do.
+ *
+ * Two nested counters:
+ *   section  increments on every heading, h1-h6. The heading itself is
+ *            labeled "S{n}" alone — it *is* the section, not a block inside
+ *            it.
+ *   para     increments on every non-heading block (paragraph, blockquote,
+ *            code block, table) and resets to 0 at each heading, so the first
+ *            block after a heading is P1. Labeled "S{n}P{m}".
+ *
+ * section starts at 0, so the document's first heading is S1 — matching how
+ * someone reading top to bottom counts sections. Content before that first
+ * heading is S0P1, S0P2, … rather than stealing the S1 slot from the real
+ * first section.
+ *
+ * COUNTED, in document order, continuous across pages:
+ *   headings h1-h6, paragraphs, blockquotes (the wrapper only), code blocks,
+ *   tables.
+ *
+ * NOT COUNTED:
+ *   - anything nested inside a list item, including the paragraphs that loose
+ *     list items wrap their text in, and including code blocks and tables
+ *     inside an item
+ *   - anything nested inside a blockquote (the quote is one block)
+ *   - block content inside a table cell (the table counts once)
+ *   - images, figures, and image-only paragraphs
+ *   - horizontal rules, inline elements
+ *   - a pandoc-generated title block
+ * ========================================================================== */
+
+body {
+  counter-reset: section 0 para 0;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  counter-increment: section;
+  /* counter-SET, not counter-reset. counter-set updates the existing `para`
+   * counter created on body, so the heading's following siblings see para=0.
+   * counter-reset here instead creates a new nested counter instance, and the
+   * blocks after the second heading read S2P3, S2P4 rather than S2P1, S2P2.
+   * That was a real, observed bug in the implementation this file is based
+   * on; it is fixed here and its contract checker guards the fix. Do not
+   * change this back. */
+  counter-set: para 0;
+  position: relative;
+}
+
+:is(h1, h2, h3, h4, h5, h6)::before {
+  content: "S" counter(section);
+}
+
+:is(p, blockquote, pre, table) {
+  counter-increment: para;
+  position: relative;
+}
+
+:is(p, blockquote, pre, table)::before {
+  content: "S" counter(section) "P" counter(para);
+}
+
+:is(p, h1, h2, h3, h4, h5, h6, blockquote, pre, table)::before {
+  position: absolute;
+  /* Fixed pt offsets, not em, so the anchors form one right-aligned column
+   * in the margin regardless of each block's own font size. 60pt keeps them
+   * inside the 1in (72pt) of body padding — see the split-margin note. */
+  left: -60pt;
+  top: 2pt;
+  width: 50pt;
+  text-align: right;
+  font-family: Menlo, Consolas, monospace;
+  font-size: 8pt;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: #b45309;
+  text-transform: none;
+  user-select: none; /* keeps labels out of copy/paste */
+  /* The anchors are the entire point of the printout, so force them to print
+   * even with "Background graphics" unchecked. Deliberately NOT applied to
+   * code, pre, or th backgrounds: those should drop out when backgrounds are
+   * off, which is what you want for a draft you are going to write on. */
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+/* Muted on paper so the prose stays dominant. */
+@media print {
+  :is(p, h1, h2, h3, h4, h5, h6, blockquote, pre, table)::before {
+    color: #888888;
+  }
+}
+
+/* Code blocks establish their containing block at the padding box, inset by
+ * border + padding (0.75pt + 8pt); compensate so the anchor column stays
+ * aligned with the prose anchors. */
+pre::before {
+  left: -68.75pt;
+  top: 6pt;
+}
+
+/* Table anchors sit at the top-left of the table grid. */
+table::before {
+  top: 3pt;
+}
+
+/* Blocks nested inside a list item, a blockquote, a table cell, or a figure
+ * are not addressable. A blockquote counts once (the wrapper). Loose list
+ * items wrap their text in <p>, which must not consume anchors — otherwise
+ * every anchor after the first loose list is off by one. A list is addressed
+ * by the blocks around it or by content.
+ *
+ * counter-set: none is required alongside counter-increment: none, because a
+ * nested heading would otherwise still apply `counter-set: para 0` from the
+ * heading rule above and silently reset the paragraph counter. */
+:is(li, blockquote, td, th, figure)
+  :is(p, h1, h2, h3, h4, h5, h6, blockquote, pre, table) {
+  counter-increment: none;
+  counter-set: none;
+}
+:is(li, blockquote, td, th, figure)
+  :is(p, h1, h2, h3, h4, h5, h6, blockquote, pre, table)::before {
+  content: none;
+}
+
+/* Pandoc's --standalone mode emits a title block when given title metadata.
+ * Skip it so user content starts at S1 instead of the document title. Do not
+ * rely on this alone: also avoid passing title metadata (see SKILL.md). */
+#title-block-header :is(h1, h2, h3, h4, h5, h6, p) {
+  counter-increment: none;
+  counter-set: none;
+}
+#title-block-header :is(h1, h2, h3, h4, h5, h6, p)::before {
+  content: none;
+}

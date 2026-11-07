@@ -1,0 +1,3397 @@
+{
+  "generated": "2026-11-07",
+  "repo": "ford-at-home/skills-library",
+  "categories": [
+    {
+      "id": "decisions",
+      "name": "Decisions & governance",
+      "description": "Gates for a decision before it locks, and reviews after it fires.",
+      "count": 16
+    },
+    {
+      "id": "evaluation",
+      "name": "Evaluation & scoring",
+      "description": "Rubrics, benchmarks and scoring models that survive being contested.",
+      "count": 8
+    },
+    {
+      "id": "research",
+      "name": "Research & evidence",
+      "description": "Finding, verifying and keeping a corpus of evidence usable.",
+      "count": 22
+    },
+    {
+      "id": "writing",
+      "name": "Writing & communication",
+      "description": "Prose that has to land: decision docs, outreach, rollouts.",
+      "count": 10
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering & operations",
+      "description": "Changing live systems safely, deploying and running agents.",
+      "count": 22
+    },
+    {
+      "id": "product",
+      "name": "Product discovery & prototyping",
+      "description": "From problem to tested prototype: JTBD, MVPs, sprints, demos.",
+      "count": 15
+    },
+    {
+      "id": "civic",
+      "name": "Civic programs & hackathons",
+      "description": "Planning and running a civic hackathon end to end.",
+      "count": 22
+    },
+    {
+      "id": "org-change",
+      "name": "Org change & cadence",
+      "description": "Plan change at the speed each layer moves, and make it stick.",
+      "count": 16
+    }
+  ],
+  "skills": [
+    {
+      "id": "correction-of-errors",
+      "name": "correction-of-errors",
+      "description": "Run a blameless post-incident review (Correction of Errors / CoE) covering incident summary, customer impact, timeline, facts, Five Whys, root cause, detection and prevention gaps, action items, and follow-up. Refuses to stop at \"human error\" — asks why the system allowed the human action to create customer impact. Use after any production incident, customer-impacting outage, or process failure; or when the user mentions \"CoE\", \"Correction of Errors\", \"postmortem\", \"post-incident review\", \"RCA\", or \"Five Whys\".",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "amazon-mechanisms",
+        "correction",
+        "errors"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/06-correction-of-errors/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill correction-of-errors",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/decisions/correction-of-errors"
+    },
+    {
+      "id": "dissent-before-commit",
+      "name": "dissent-before-commit",
+      "description": "Gate one already-authorized action that is now scheduled to fire, by re-checking every objection raised at authoring time against what has changed since, then forcing the single strongest current case to be addressed by a change to the action or accepted with a named tradeoff a named person owns. For irreversible actions an accepted tradeoff is not sufficient and the recommendation becomes pause. Catches a team pointing at an old dissent discussion as proof concerns were heard when nobody has rechecked it against current state. Use when a migration cut-over, deprecation, launch, contract termination, staff release, or data deletion is queued and was approved weeks or months ago. Trigger phrases include before we cut over, one-way door, is this still the right call, any last objections, pre-commit review, point of no return, we already discussed the risks.",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "skills-library",
+        "dissent",
+        "before",
+        "commit"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library",
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:dissent-before-commit/SKILL.md",
+        "ford-at-home/amazonian:skills/12-dissent-before-commit/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill dissent-before-commit",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/decisions/dissent-before-commit"
+    },
+    {
+      "id": "initiative-thesis-review",
+      "name": "initiative-thesis-review",
+      "description": "Decide whether one initiative is still worth pursuing by testing its tenets — the \"if we are wrong about X, we should stop\" statements — against external evidence consulted before the dashboard, and refusing to return continue while any tenet is invalid. Requires documented external context changes as an input, because without them a tenet check collapses into a metrics check. Exists to catch the case where output metrics sit inside target while the belief the initiative was funded on has quietly collapsed, because the team narrowed what it measures to the part still working. For one initiative, not allocation across several. Trigger phrases include should we still be doing this, is this still the right bet, thesis check, pivot or kill, tenets review, do we still believe this, the numbers look fine but.",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "skills-library",
+        "initiative",
+        "thesis"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:initiative-thesis-review/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill initiative-thesis-review",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/decisions/initiative-thesis-review"
+    },
+    {
+      "id": "launch-readiness-review",
+      "name": "launch-readiness-review",
+      "description": "Gate the launch of a feature, product, or initiative by diffing the current build state against the original PRFAQ contract. Emits one of go / no_go / conditional_go / defer with a PRFAQ drift report, predicted failure modes (pre-mortem), risk register delta, and rollback testability check. The named failure mode is PRFAQ drift — the gap between authoring-time promise and ship-time reality, where the surface signal (features shipped match the PRFAQ scope) hides that the customer outcome the PRFAQ promised is not being delivered. Use when an artifact authorized by a PRFAQ or six-page narrative is approaching launch; or when the user mentions \"launch readiness\", \"go/no-go\", \"ship review\", \"pre-launch review\", or \"launch gate\".",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "amazon-mechanisms",
+        "launch",
+        "readiness"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/09-launch-readiness-review/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill launch-readiness-review",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/decisions/launch-readiness-review"
+    },
+    {
+      "id": "leadership-principles-reviewer",
+      "name": "leadership-principles-reviewer",
+      "description": "Evaluate a proposal, project, PRFAQ, or six-page narrative against Amazon-style leadership principles. Surfaces strongest and weakest alignment, contradictions, missing evidence, and risks hidden by optimism. Use when reviewing a PRFAQ before submission, when stress-testing a strategy doc, when a proposal feels \"too clean\", or when the user mentions \"LP review\", \"leadership principles\", \"stress test\", \"red team\", or \"pre-mortem\".",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "amazon-mechanisms",
+        "leadership",
+        "principles",
+        "reviewer"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/07-leadership-principles-reviewer/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill leadership-principles-reviewer",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/decisions/leadership-principles-reviewer"
+    },
+    {
+      "id": "lifecycle-navigator",
+      "name": "lifecycle-navigator",
+      "description": "Read governance.yaml, identify the next required Amazonian skill given the bet's current state, and route the operator either through superpowers:brainstorming (when present) or a minimal native questioning loop (when not). The named failure mode is phase laundering — recommending an advanced-phase interrogative skill against manifest fields that are themselves assumption-tagged from bootstrap, so the recommended stress test runs on laundered state. Refuses confirmatory invocation. Use at session start once governance.yaml exists, when the operator asks \"what should I do next\", or when they mention \"lifecycle navigator\", \"next step\", \"what's next\", \"where am I in the chain\", \"PDLC flow\", or \"manage me through the suite\".",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "amazon-mechanisms",
+        "lifecycle",
+        "navigator"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/14-lifecycle-navigator/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill lifecycle-navigator",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/decisions/lifecycle-navigator"
+    },
+    {
+      "id": "multi-persona-roundtable",
+      "name": "multi-persona-roundtable",
+      "description": "Stress-test one proposal from several fixed viewpoints that each own a kill criterion, run as separate isolated turns rather than one pass, so you get productive disagreement instead of an averaged opinion. Produces an append-only deliberation log and a verdict of ship, refine, or kill with the specific blocker named. Use when a proposal looks good and you suspect it will die on contact with ownership, funding, operations, or the people it claims to serve. Trigger phrases include roundtable, stress test this idea, red team, evaluate from multiple perspectives, poke holes in this, will this actually ship, pre-mortem, devil's advocate, panel review.",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "skills-library",
+        "multi",
+        "persona",
+        "roundtable"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:multi-persona-roundtable/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill multi-persona-roundtable",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/decisions/multi-persona-roundtable"
+    },
+    {
+      "id": "portfolio-reallocation-review",
+      "name": "portfolio-reallocation-review",
+      "description": "Review the allocation of capacity across every initiative a team runs at once by constructing the portfolio you would authorize from scratch today — same total capacity, same option set — before looking at the one you actually have, and treating the gap as the finding. Refuses to run if the hypothetical was built with the current allocation in view, if any initiative lacks a dated forward-looking case, or if a no-change outcome is not justified item by item. Exists to catch the portfolio that is the residue of accumulated past decisions rather than one anyone would choose today, which no per-initiative review can detect because each initiative returns a defensible answer. For three or more initiatives at once. Trigger phrases include portfolio review, bet allocation, what should we stop doing, are we spread too thin, nothing ever gets killed, planning cycle allocation.",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "skills-library",
+        "portfolio",
+        "reallocation"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:portfolio-reallocation-review/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill portfolio-reallocation-review",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/decisions/portfolio-reallocation-review"
+    },
+    {
+      "id": "portfolio-review",
+      "name": "portfolio-review",
+      "description": "Stress-test a team's collective portfolio of bets across a period. Asks not \"is each bet still right?\" (that is `tenets-review`) but \"given everything we know now, is the allocation across all of our current bets coherent?\" Emits per-bet recommendations (continue / wind_down / amplify / hold / pivot), a zero-based reallocation comparison, and an explicit drift report. The named failure mode is portfolio drift — the portfolio that exists now is the residue of accumulated past decisions, not the portfolio anyone would intentionally author today; the surface signal (stable composition, defensible per-bet stories) hides incoherent marginal allocation. Use when a period closes and cross-bet allocation is up for review; or when the user mentions \"portfolio review\", \"OKR cycle\", \"bet allocation\", \"investment review\", or \"kill list\".",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "amazon-mechanisms",
+        "portfolio"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/13-portfolio-review/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill portfolio-review",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/decisions/portfolio-review"
+    },
+    {
+      "id": "principles-alignment-review",
+      "name": "principles-alignment-review",
+      "description": "Review a drafted proposal against a principle set the caller supplies — company values, engineering tenets, a funder's criteria, a team charter — and report where it aligns, where it is silent, and where it invokes one principle to excuse skipping another. The principle set is a required input with no default, and the review cannot come back with everything strong. Its distinctive output is the contradictions, found between principles and invisible to a principle-by-principle read. One reader applying one declared set, not several viewpoints arguing. Use when a proposal is about to be submitted, or when a document reads too clean. Trigger phrases include principles review, values review, review against our principles, stress test this proposal, red team this doc, adversarial review, does this hold up, pre-mortem this memo.",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "skills-library",
+        "principles",
+        "alignment"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:principles-alignment-review/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill principles-alignment-review",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/decisions/principles-alignment-review"
+    },
+    {
+      "id": "repo-state-import",
+      "name": "repo-state-import",
+      "description": "Lift a brownfield repo's current governance state into a structured governance.yaml manifest. Conducts a guided interview over tenets, success metrics, live mechanisms, period goals, dissent history, and prior interviews; refuses to emit any field without an evidence tag from the set fact / assumption / inference / open_question; refuses to claim a field is a fact without a non-null source. The informal named risk is brownfield laundering — a populated manifest read by downstream skills as if it had passed governance gates when it never did. Use when first deploying the Amazonian suite onto an existing repo, or when re-importing after material changes; or when the user mentions \"bootstrap\", \"onboard a repo\", \"lift state\", \"governance.yaml\", \"import existing state\", or \"brownfield deploy\".",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "amazon-mechanisms",
+        "repo",
+        "state",
+        "import"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/00-repo-state-import/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill repo-state-import",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/decisions/repo-state-import"
+    },
+    {
+      "id": "risk-review",
+      "name": "risk_review",
+      "description": "Prevent common civic-tech mistakes and enforce guardrails.",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "pillar-research",
+        "risk"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/risk_review/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/risk_review/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/risk_review/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/risk_review/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/risk_review/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/risk_review/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/risk_review/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill risk-review",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/decisions/risk-review"
+    },
+    {
+      "id": "roundtable-facilitator",
+      "name": "roundtable-facilitator",
+      "description": "Orchestrate a multi-turn, multi-persona evaluation of a civic innovation idea. Each persona takes a separate turn with real research, writes to a persistent conversation log, and the facilitator manages phase transitions, challenge routing, and consensus detection.",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "hackathon",
+        "roundtable",
+        "facilitator"
+      ],
+      "source_repos": [
+        "hack4rva/2026-annual-hackathon"
+      ],
+      "source_paths": [
+        "hack4rva/2026-annual-hackathon:agents/skills/roundtable-facilitator/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill roundtable-facilitator",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "rva-hacks-2026",
+      "path": "skills/decisions/roundtable-facilitator"
+    },
+    {
+      "id": "roundtable-persona",
+      "name": "roundtable-persona",
+      "description": "Template for individual persona turns in a roundtable evaluation. Each subagent loads this skill to understand its output format, research obligations, and behavioral constraints.",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "hackathon",
+        "roundtable",
+        "persona"
+      ],
+      "source_repos": [
+        "hack4rva/2026-annual-hackathon"
+      ],
+      "source_paths": [
+        "hack4rva/2026-annual-hackathon:agents/skills/roundtable-persona/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill roundtable-persona",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "rva-hacks-2026",
+      "path": "skills/decisions/roundtable-persona"
+    },
+    {
+      "id": "tenets-review",
+      "name": "tenets-review",
+      "description": "Stress-test whether a product or initiative is still worth pursuing by checking its tenets (\"if we're wrong about X, stop\") against current external context and metrics. Emits one of continue / kill / pivot / escalate. Refuses to let metrics speak for the thesis — the named failure mode is metric satisficing, where output metrics sit within target while the underlying bet has collapsed. Use when external context shifts, on annual review, or when the user mentions \"tenets review\", \"kill criteria\", \"thesis check\", \"should we still be doing this\", or \"pivot or kill\".",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "amazon-mechanisms",
+        "tenets"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/10-tenets-review/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill tenets-review",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/decisions/tenets-review"
+    },
+    {
+      "id": "working-backwards-prfaq",
+      "name": "working-backwards-prfaq",
+      "description": "Turn an idea into a PRFAQ (Amazon Working Backwards) packet — press release, customer FAQ, internal FAQ, MVP boundary, success metrics, risks, decision recommendation, and open questions. Use when defining a new product, feature, or internal initiative; when an idea needs sharpening before engineering or design starts; or when the user mentions PRFAQ, press release, working backwards, product definition, product brief, or product discovery.",
+      "category": "decisions",
+      "tags": [
+        "decisions",
+        "amazon-mechanisms",
+        "working",
+        "backwards",
+        "prfaq"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/01-working-backwards-prfaq/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill working-backwards-prfaq",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/decisions/working-backwards-prfaq"
+    },
+    {
+      "id": "ambitious-goal-grading",
+      "name": "ambitious-goal-grading",
+      "description": "Grade whether a period's goal targets were set at an honest difficulty, not whether they were hit — reconcile every goal the period authorized against the ones submitted, recompute any target that moved mid-period against its original, require named surprise evidence for anything hit at or above 100%, and separate a target set too high from a plan that broke. Exists because a grading submission arrives pre-filtered — only the goals that were hit, with targets already revised, and the misses quietly dropped. Use at quarter or year end, when next period's targets are being set, or when a team keeps hitting everything. Trigger phrases include sandbagged, stretch goal, goal calibration, OKR scoring, grade the goals, were our targets right, did we set the bar too low, we hit 100% of our goals.",
+      "category": "evaluation",
+      "tags": [
+        "evaluation",
+        "skills-library",
+        "ambitious",
+        "goal",
+        "grading"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library",
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:ambitious-goal-grading/SKILL.md",
+        "ford-at-home/amazonian:skills/11-ambitious-goal-grading/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill ambitious-goal-grading",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/evaluation/ambitious-goal-grading"
+    },
+    {
+      "id": "anchored-rubric-design",
+      "name": "anchored-rubric-design",
+      "description": "Design the scale for judging model output — fields that trade off against each other so one cheap trick can't max the score, numbered bands with worked anchors instead of an unanchored 1-10, each field typed rule-computed or LLM-judged, and the composite as deterministic arithmetic rather than an LLM's overall number. Produces a rubric spec; running one across candidates is `llm-behavior-benchmark`. Use before benchmarking, evaluating, or grading any model behavior — review-comment quality, empathy, concision, refusal quality, brand voice, teaching style. Trigger phrases include design a rubric, scoring criteria, LLM as judge, how should we grade this, evaluation dimensions, judge prompt, score the outputs, our scores are all the same.",
+      "category": "evaluation",
+      "tags": [
+        "evaluation",
+        "skills-library",
+        "anchored",
+        "rubric",
+        "design"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:anchored-rubric-design/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill anchored-rubric-design",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/evaluation/anchored-rubric-design"
+    },
+    {
+      "id": "auditable-scoring-model",
+      "name": "auditable-scoring-model",
+      "description": "Audit a statistical prediction — a price, rating, duration, or probability fitted from historical records — so target leakage is caught by a failing assertion rather than by an implausibly good validation score. Installs an allowlist assertion over feature names, structural separation between features and ground truth, a value scan over model outputs, and frozen calibration bounds that make a later accuracy improvement prove it did not come from leakage or from refitting to one case. Concerns fitted predictions, not rubric points awarded by a judge. Use when a validation number looks too good, when adding a feature to a model already calibrated, or when someone asks whether a model could be cheating. Trigger phrases include target leakage, data leakage, train-test contamination, too good to be true accuracy, feature audit, holdout, is the model cheating, backtest, overfitting to one case, calibration drift.",
+      "category": "evaluation",
+      "tags": [
+        "evaluation",
+        "skills-library",
+        "auditable",
+        "scoring",
+        "model"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:auditable-scoring-model/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill auditable-scoring-model",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/evaluation/auditable-scoring-model"
+    },
+    {
+      "id": "defensible-submission-scoring",
+      "name": "defensible-submission-scoring",
+      "description": "Score human submissions to a themed call so the result survives a losing team asking why. Reads the problem statement before the submission, runs disqualifying checks before any scoring, scores desirability and survivability on two separate rubrics it carries, and refuses to collapse them into one ranking number because the useful finding lives in the gap between them. For human entries, not model output. Use when judging a hackathon, an innovation competition, a grant round, an internal proposal review, or when aggregating multiple judges' scores into a defensible total. Trigger phrases include judge the submissions, score the demos, apply the rubric, weighted totals, pick the winner, rank the proposals, why did we lose, tie-break, judging tracker.",
+      "category": "evaluation",
+      "tags": [
+        "evaluation",
+        "skills-library",
+        "defensible",
+        "submission",
+        "scoring"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:defensible-submission-scoring/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill defensible-submission-scoring",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/evaluation/defensible-submission-scoring"
+    },
+    {
+      "id": "innovation-lifecycle",
+      "name": "INNOVATION_LIFECYCLE",
+      "description": "The canonical lifecycle that every hackathon submission must be forced through. Each stage is scored as `COMPLETE`, `PARTIAL`, `MISSING`, or `INVALIDATED`. No stage can be skipped — skipping is the thing hackathons are best at, and this skill exists to catch it.",
+      "category": "evaluation",
+      "tags": [
+        "evaluation",
+        "hackathon",
+        "innovation",
+        "lifecycle"
+      ],
+      "source_repos": [
+        "hack4rva/2026-annual-hackathon"
+      ],
+      "source_paths": [
+        "hack4rva/2026-annual-hackathon:skills/INNOVATION_LIFECYCLE/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill innovation-lifecycle",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "rva-hacks-2026",
+      "path": "skills/evaluation/innovation-lifecycle"
+    },
+    {
+      "id": "llm-behavior-benchmark",
+      "name": "llm-behavior-benchmark",
+      "description": "Execute an existing rubric across several models or prompts so the resulting ranking survives being contested. Pins the run to a content-hashed manifest, gives every candidate byte-identical inputs, judges with a pinned judge model at fixed temperature, computes the composite once, keeps errors distinguishable from bad scores, and proves the judge discriminates before anything is published. Consumes a rubric; designing one is `anchored-rubric-design`. Use when comparing models on a behavior rather than an answer key, standing up a recurring eval, or investigating why every candidate scores the same. Trigger phrases include benchmark these models, compare models, model bake-off, LLM as judge, eval harness, leaderboard, our eval shows no difference, weekly eval, which model should we use.",
+      "category": "evaluation",
+      "tags": [
+        "evaluation",
+        "skills-library",
+        "llm",
+        "behavior",
+        "benchmark"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:llm-behavior-benchmark/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill llm-behavior-benchmark",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/evaluation/llm-behavior-benchmark"
+    },
+    {
+      "id": "operational-message-friction",
+      "name": "operational-message-friction",
+      "description": "Score one unsent operational message against a five-component friction rubric, then compress it only if the score earns a rewrite. Covers the four structural moves every working message needs, per-component bands, channel length targets, and the relationship and audience flags that scoring alone misses. Scores a draft for its reader's cost, not model output or submissions. Use before posting a Slack update, sending an announcement, writing a handoff, or asking for a decision by email. Trigger phrases include score this, friction check, how bad is this, where is the friction, is this too long for Slack, tighten this message, make this Slack-ready, compress this before I send it. Not for essays, posts, or anything where density is the point.",
+      "category": "evaluation",
+      "tags": [
+        "evaluation",
+        "skills-library",
+        "operational",
+        "message",
+        "friction"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:operational-message-friction/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill operational-message-friction",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/evaluation/operational-message-friction"
+    },
+    {
+      "id": "ralph-loop",
+      "name": "ralph-loop",
+      "description": "A two-pass quality gate that catches the optimism bias inherent in first-pass reviews. Pass 1 checks completeness against source-of-truth artifacts. Pass 2 looks backward and asks \"what did we falsely assume?\"",
+      "category": "evaluation",
+      "tags": [
+        "evaluation",
+        "hackathon",
+        "ralph",
+        "loop"
+      ],
+      "source_repos": [
+        "hack4rva/2026-annual-hackathon"
+      ],
+      "source_paths": [
+        "hack4rva/2026-annual-hackathon:skills/ralph-loop/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill ralph-loop",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "rva-hacks-2026",
+      "path": "skills/evaluation/ralph-loop"
+    },
+    {
+      "id": "architecture-note-routing",
+      "name": "architecture-note-routing",
+      "description": "Take raw architectural thinking — a transcript fragment, voice note, research memo, or half-formed idea in chat — and land it in exactly one durable place without inventing detail, duplicating what already exists, or quietly reconciling a contradiction. Classifies the fragment first, then routes it — a term to the glossary, a boundary to an architecture document, a framing to a product document, a closed-off option to a decision record, an unanswered question to the open-questions list. Exists because the default outcome is a new file that overlaps three existing ones. Use when someone drops in raw thinking that needs a home. Trigger phrases include write this up, capture this, where should this live, turn this into a doc, document this idea, synthesise these notes, from this transcript.",
+      "category": "research",
+      "tags": [
+        "research",
+        "skills-library",
+        "architecture",
+        "note",
+        "routing"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:architecture-note-routing/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill architecture-note-routing",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/research/architecture-note-routing"
+    },
+    {
+      "id": "architecture-note-synthesis",
+      "name": "architecture-note-synthesis",
+      "description": "Turn a rough architecture fragment, transcript excerpt, or voice-note idea about Jungl3 into the right file(s) under docs/ — routed per CLAUDE.md §7, linked to the glossary, and without inventing detail. Use when the user drops in raw architectural thinking (a paragraph, a transcript, a research memo excerpt, a whiteboard-style idea) and it needs to land somewhere durable rather than stay in chat.",
+      "category": "research",
+      "tags": [
+        "research",
+        "jungl3",
+        "architecture",
+        "note",
+        "synthesis"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/jungl3"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/jungl3:.cursor/skills/architecture-note-synthesis/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill architecture-note-synthesis",
+      "last_updated": "2026-04-25",
+      "license": "MIT",
+      "related_project": "jungle",
+      "path": "skills/research/architecture-note-synthesis"
+    },
+    {
+      "id": "corpus-navigation-sync",
+      "name": "corpus_navigation_sync",
+      "description": "Keep the research corpus **traversable by AI agents** whenever reports are added, removed, renamed, or grouped under a new section.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "corpus",
+        "navigation",
+        "sync"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/corpus_navigation_sync/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill corpus-navigation-sync",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/corpus-navigation-sync"
+    },
+    {
+      "id": "cross-report-synthesis",
+      "name": "cross_report_synthesis",
+      "description": "Synthesize findings from multiple research reports into a coherent answer while preserving source traceability and acknowledging uncertainty.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "cross",
+        "report",
+        "synthesis"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/cross_report_synthesis/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/cross_report_synthesis/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/cross_report_synthesis/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/cross_report_synthesis/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/cross_report_synthesis/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/cross_report_synthesis/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/cross_report_synthesis/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill cross-report-synthesis",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/cross-report-synthesis"
+    },
+    {
+      "id": "customer-interview-synthesis",
+      "name": "customer-interview-synthesis",
+      "description": "Gate a set of customer interviews before their themes become proposal-grade conclusions. Requires the team's prior hypothesis as an input, enforces a minimum transcript count below which output is forced to exploratory, strips any bias flag that cannot quote the panel or a transcript, and refuses to let an interviewer's notes ground a claim about what a respondent actually did. Use when the risk is that the team's prior comes back dressed as customer signal. Not an interview guide generator and not a theme extractor — it is the check on one. Trigger phrases include is this research actually validated, did the interviews confirm what we already believed, bias check on our research, can we build a proposal on this panel, how many interviews is enough, synthesize our user research.",
+      "category": "research",
+      "tags": [
+        "research",
+        "skills-library",
+        "customer",
+        "interview",
+        "synthesis"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library",
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:customer-interview-synthesis/SKILL.md",
+        "ford-at-home/amazonian:skills/08-customer-interview-synthesis/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill customer-interview-synthesis",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/research/customer-interview-synthesis"
+    },
+    {
+      "id": "dataset-mapper",
+      "name": "dataset_mapper",
+      "description": "Identify usable datasets, schemas, access paths, and gaps.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "dataset",
+        "mapper"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/dataset_mapper/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/dataset_mapper/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/dataset_mapper/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/dataset_mapper/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/dataset_mapper/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/dataset_mapper/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/dataset_mapper/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill dataset-mapper",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/dataset-mapper"
+    },
+    {
+      "id": "evidence-grounded-answering",
+      "name": "evidence_grounded_answering",
+      "description": "Answer user questions using only content actually present in this repository corpus, with explicit grounding and uncertainty marking.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "evidence",
+        "grounded",
+        "answering"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/evidence_grounded_answering/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/evidence_grounded_answering/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/evidence_grounded_answering/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/evidence_grounded_answering/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/evidence_grounded_answering/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/evidence_grounded_answering/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/evidence_grounded_answering/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill evidence-grounded-answering",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/evidence-grounded-answering"
+    },
+    {
+      "id": "evidence-grounded-verification",
+      "name": "evidence-grounded-verification",
+      "description": "Clear every load-bearing claim in a document before it reaches someone who can check it. Sorts each claim into do-not-cite, correct-before-use, or cleared; records where you looked; separates measured numbers from derived ones, and unverified from false. Catches claims that feel established only because your own team has repeated them. Use before sending a grant application, board memo, regulatory filing, investor update, press release, conference talk, or README, or when someone asks \"are we sure about this?\" Trigger phrases include fact check, verify claims, source this, check our numbers, provenance, before we send this, is this actually true.",
+      "category": "research",
+      "tags": [
+        "research",
+        "skills-library",
+        "evidence",
+        "grounded",
+        "verification"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:evidence-grounded-verification/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill evidence-grounded-verification",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/research/evidence-grounded-verification"
+    },
+    {
+      "id": "graph-entity-naming",
+      "name": "graph_entity_naming",
+      "description": "Rules for what a knowledge-graph node may be named after, and an audit script that finds junk labels. Use when writing or reviewing extraction parsers, when a graph shows nonsense node titles, when deciding what becomes an entity versus evidence, or before publishing regenerated graph data.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "graph",
+        "entity",
+        "naming"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/graph_entity_naming/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill graph-entity-naming",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/graph-entity-naming"
+    },
+    {
+      "id": "jtbd-research",
+      "name": "jtbd-research",
+      "description": "After JTBD analysis produces open questions for a pillar, this skill groups them into efficient Parallel AI research queries, fires them, polls for results, and integrates answers back into the JTBD files.",
+      "category": "research",
+      "tags": [
+        "research",
+        "hackathon",
+        "jtbd"
+      ],
+      "source_repos": [
+        "hack4rva/2026-annual-hackathon"
+      ],
+      "source_paths": [
+        "hack4rva/2026-annual-hackathon:skills/jtbd-research/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill jtbd-research",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "rva-hacks-2026",
+      "path": "skills/research/jtbd-research"
+    },
+    {
+      "id": "knowledge-graph-pipeline",
+      "name": "knowledge_graph_pipeline",
+      "description": "Change the knowledge-graph extractor and publish the result across all seven pillar repos and the rvahacks site. Use when editing anything under knowledge-graph/extraction/, when graph data needs regenerating, when running the release check, or when asked to publish or deploy graph changes to rvahacks.org.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "knowledge",
+        "graph",
+        "pipeline"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/knowledge_graph_pipeline/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill knowledge-graph-pipeline",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/knowledge-graph-pipeline"
+    },
+    {
+      "id": "markdown-knowledge-graph-traversal",
+      "name": "markdown-knowledge-graph-traversal",
+      "description": "Answer a hard question from a corpus of plain Markdown notes without producing confident soup. Two-pass hybrid retrieval, a typed claim-and-evidence graph, confidence and source quality scored as separate axes, and a seven-section answer with exact file-path citations. Says \"not in the corpus\" instead of filling gaps from general knowledge. Answers questions from a corpus; does not repair note-level metadata (markdown-memory-schema-maintenance) or corpus-level indexes (research-corpus-self-indexing). Use for cross-topic, evaluative, decision, provenance, or contradiction-hunting questions over notes, a wiki, a vault, a docs tree, or a research archive. Trigger phrases include ask my notes, what does my vault say, based on my notes, how do we know that, is anything in my notes inconsistent, what have I decided about, which option does the evidence support, search my knowledge base.",
+      "category": "research",
+      "tags": [
+        "research",
+        "skills-library",
+        "markdown",
+        "knowledge",
+        "graph"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:markdown-knowledge-graph-traversal/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill markdown-knowledge-graph-traversal",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/research/markdown-knowledge-graph-traversal"
+    },
+    {
+      "id": "markdown-memory-schema-maintenance",
+      "name": "markdown-memory-schema-maintenance",
+      "description": "Audit and repair the metadata layer of a Markdown notes corpus, one note at a time, so retrieval and confidence calibration can work. Checks required frontmatter fields, enum validity, stale claim caches, supersede chains, broken wikilinks, orphans, and missing uncertainty labels; emits a defect list ranked by retrieval impact plus an append-only repair plan. Never deletes, never backfills a field value it cannot source. Works inside notes; not the corpus-level index or filing scheme (research-corpus-self-indexing), and never answers a question about the notes' subject matter (markdown-knowledge-graph-traversal). Use after a bulk import, before trusting a corpus for grounded answering, or when search keeps missing notes you know exist. Trigger phrases include audit my vault, validate frontmatter, why can't it find that note, my notes are a mess, check my knowledge base for inconsistencies, find orphan notes, fix my metadata, is my schema still valid.",
+      "category": "research",
+      "tags": [
+        "research",
+        "skills-library",
+        "markdown",
+        "memory",
+        "schema"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:markdown-memory-schema-maintenance/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill markdown-memory-schema-maintenance",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/research/markdown-memory-schema-maintenance"
+    },
+    {
+      "id": "prior-art-regional-research",
+      "name": "prior-art-regional-research",
+      "description": "Research what has already been built — regionally and nationally — before generating solution ideas. Ensures ideas are grounded in what is known to work, what has been tried and failed, and what Richmond could adopt or adapt rather than rebuild from scratch.",
+      "category": "research",
+      "tags": [
+        "research",
+        "hackathon",
+        "prior",
+        "art",
+        "regional"
+      ],
+      "source_repos": [
+        "hack4rva/2026-annual-hackathon"
+      ],
+      "source_paths": [
+        "hack4rva/2026-annual-hackathon:skills/prior-art-regional-research/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill prior-art-regional-research",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "rva-hacks-2026",
+      "path": "skills/research/prior-art-regional-research"
+    },
+    {
+      "id": "repo-librarian",
+      "name": "repo_librarian",
+      "description": "Help users navigate repository knowledge quickly.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "repo",
+        "librarian"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/repo_librarian/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/repo_librarian/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/repo_librarian/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/repo_librarian/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/repo_librarian/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/repo_librarian/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/repo_librarian/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill repo-librarian",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/repo-librarian"
+    },
+    {
+      "id": "repo-memory",
+      "name": "repo_memory",
+      "description": "Reconstruct repository state and current stage.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "repo",
+        "memory"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/repo_memory/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/repo_memory/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/repo_memory/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/repo_memory/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/repo_memory/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/repo_memory/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/repo_memory/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill repo-memory",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/repo-memory"
+    },
+    {
+      "id": "report-update-protocol",
+      "name": "report_update_protocol",
+      "description": "Safely add or update research reports and keep all metadata, indexes, and navigation files synchronized.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "report",
+        "update",
+        "protocol"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/report_update_protocol/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/report_update_protocol/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/report_update_protocol/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/report_update_protocol/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/report_update_protocol/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/report_update_protocol/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/report_update_protocol/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill report-update-protocol",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/report-update-protocol"
+    },
+    {
+      "id": "research-corpus-navigation",
+      "name": "research_corpus_navigation",
+      "description": "Map a user question to the correct pillar section and specific research reports before attempting to answer.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "corpus",
+        "navigation"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/research_corpus_navigation/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/research_corpus_navigation/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/research_corpus_navigation/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/research_corpus_navigation/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/research_corpus_navigation/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/research_corpus_navigation/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/research_corpus_navigation/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill research-corpus-navigation",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/research-corpus-navigation"
+    },
+    {
+      "id": "research-corpus-self-indexing",
+      "name": "research-corpus-self-indexing",
+      "description": "Keep a growing Markdown corpus findable by maintaining the layer above individual notes — verify the generated index still matches its generator, that every dated capture has been promoted into a durable typed note, and that the filing taxonomy is still a closed set. Emits a corpus health report and an ordered repair plan. Never deletes a note, never hand-edits a generated index, never invents a taxonomy the corpus does not declare. Works above the note; not per-note frontmatter validity (markdown-memory-schema-maintenance), and never answers a question from the notes (markdown-knowledge-graph-traversal). Use when a note pile has outgrown the folder it started in, after an ingest pipeline has run unattended for weeks, when two indexes disagree, or before restructuring paths that other tools write to. Trigger phrases include is my index stale, rebuild the index, did the ingest miss anything, my notes never got filed, these captures were never promoted, my vault outgrew its structure, reorganize my knowledge base, which index is right, safe to move these folders.",
+      "category": "research",
+      "tags": [
+        "research",
+        "skills-library",
+        "corpus",
+        "self"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:research-corpus-self-indexing/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill research-corpus-self-indexing",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/research/research-corpus-self-indexing"
+    },
+    {
+      "id": "research-runner",
+      "name": "research_runner",
+      "description": "Execute research prompts and collect findings with sources.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "runner"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/research_runner/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/research_runner/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/research_runner/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/research_runner/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/research_runner/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/research_runner/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/research_runner/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill research-runner",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/research-runner"
+    },
+    {
+      "id": "research-search",
+      "name": "research_search",
+      "description": "Use when answering questions that require facts, evidence, personas, data sources, risks, or prior art from the Thriving Economy pillar research corpus. Use when a team asks about Richmond MBE contracting, small business formation, services, data availability, MVP feasibility, demo strategy, or risks — before answering from memory.",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "search"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/research_search/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/research_search/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/research_search/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/research_search/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/research_search/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/research_search/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/research_search/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill research-search",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/research-search"
+    },
+    {
+      "id": "run-knowledge-graph",
+      "name": "run_knowledge_graph",
+      "description": "Install and run the Knowledge Graph and 3D Funding Explorer visualization",
+      "category": "research",
+      "tags": [
+        "research",
+        "pillar-research",
+        "run",
+        "knowledge",
+        "graph"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/run_knowledge_graph/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill run-knowledge-graph",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/research/run-knowledge-graph"
+    },
+    {
+      "id": "amazon-writing-linter",
+      "name": "amazon-writing-linter",
+      "description": "Rewrite docs into clear, evidence-heavy Amazon-style prose. Strips vague adjectives, unsupported claims, passive evasions, and weasel words; demands metrics, owners, and decision relevance. Use when polishing a PRFAQ, six-page narrative, memo, or any decision-bearing document; when the user asks to \"tighten\", \"edit\", or \"make this Amazon-style\"; or when a draft is full of \"we believe\", \"significant\", \"robust\", or \"simple\".",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "amazon-mechanisms",
+        "amazon",
+        "linter"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/02-amazon-writing-linter/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill amazon-writing-linter",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/writing/amazon-writing-linter"
+    },
+    {
+      "id": "annotation-interpretation",
+      "name": "annotation-interpretation",
+      "description": "Interpret scanned or photographed pages of the printed Hardcopy Draft artifacts — locate marks with S{n}P{m} anchors and Q{n} question ids, classify symbols/dials/directives per MARKUP.md, decide what is an edit vs. a note vs. noise, and report ambiguity instead of guessing. Use for tasks about reading marked-up pages, handwriting recognition prompts, resolving annotations to blocks, or applying pen edits to a document.",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "hardcopy-draft",
+        "annotation",
+        "interpretation"
+      ],
+      "source_repos": [
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/cozy-core-foundation:.cursor/skills/annotation-interpretation/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill annotation-interpretation",
+      "last_updated": "2026-07-16",
+      "license": "MIT",
+      "related_project": "hardcopy-draft",
+      "path": "skills/writing/annotation-interpretation"
+    },
+    {
+      "id": "communication-rollout-planning",
+      "name": "communication-rollout-planning",
+      "description": "Sequence a multi-channel announcement into an ordered plan of communication moves with draft copy for each, ordered so nobody who matters hears it from a broadcast. Covers audience size bands, composition, how each segment stands toward the sender, which move fits which purpose, and the ordering rules that decide what has to happen before the broadcast. Use when planning a launch, reorg, policy change, decision, migration, or any announcement with stakeholders. Trigger phrases include comm plan, how should I roll this out, plan the announcement, who do I need to tell first, sequence this rollout, launch plan, change management. Not for drafting or scoring one message.",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "skills-library",
+        "communication",
+        "rollout",
+        "planning"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:communication-rollout-planning/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill communication-rollout-planning",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/writing/communication-rollout-planning"
+    },
+    {
+      "id": "decision-prose-linting",
+      "name": "decision-prose-linting",
+      "description": "Tighten a decision-bearing draft — memo, brief, proposal, status narrative — without making it more confident than the author was. A removed hedge must be replaced by an explicit uncertainty tag rather than left as a bald assertion, and every removal is logged in a ledger so the author can confirm nothing load-bearing was lost. Never invents a number, an owner, or a date to satisfy its own rules. Use when a draft is going to a reviewer who will ask how you know. Trigger phrases include tighten this, lint this doc, remove the fluff, make this evidence-based, edit this memo, this reads like marketing, cut the weasel words, before I send this to leadership.",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "skills-library",
+        "decision",
+        "prose",
+        "linting"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:decision-prose-linting/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill decision-prose-linting",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/writing/decision-prose-linting"
+    },
+    {
+      "id": "paper-markup-revision",
+      "name": "paper-markup-revision",
+      "description": "Apply edits marked by hand on a printed draft back into the source file, resolving every positional reference to an exact block or refusing to guess. Covers printing with deterministic S{n}P{m} margin anchors, the mark vocabulary, the resolution order, and an unresolved file no instruction can be dropped from silently. Use after marking up a printout, dictating changes against a paper copy, or transcribing red-pen edits. Trigger phrases include apply my edits, I marked up the printout, merge my dictated changes, here are my markup notes, v2 with my edits, apply the red pen. Not for rewriting a draft in a voice and not for proofreading.",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "skills-library",
+        "paper",
+        "markup",
+        "revision"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:paper-markup-revision/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill paper-markup-revision",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/writing/paper-markup-revision"
+    },
+    {
+      "id": "research-grounded-outreach",
+      "name": "research-grounded-outreach",
+      "description": "Draft SME outreach emails that lead with confirmed research findings and ask only the questions that genuinely remain unanswered. Replaces the generic `sme-outreach` skill template with a research-heavy format that earns credibility before making asks.",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "hackathon",
+        "research",
+        "grounded",
+        "outreach"
+      ],
+      "source_repos": [
+        "hack4rva/2026-annual-hackathon"
+      ],
+      "source_paths": [
+        "hack4rva/2026-annual-hackathon:skills/research-grounded-outreach/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill research-grounded-outreach",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "rva-hacks-2026",
+      "path": "skills/writing/research-grounded-outreach"
+    },
+    {
+      "id": "six-page-narrative",
+      "name": "six-page-narrative",
+      "description": "Convert a strategy, architecture, or major decision into a six-page narrative — a written decision memo with context, problem, current state, proposed mechanism, alternatives, risks, metrics, and explicit dissent. No slides. No bullet soup. Use when preparing a decision document for senior review, when an architecture needs written defense, or when the user mentions \"six-pager\", \"narrative\", \"decision memo\", \"strategy doc\", or \"ADR but bigger\".",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "amazon-mechanisms",
+        "six",
+        "page",
+        "narrative"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/03-six-page-narrative/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill six-page-narrative",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/writing/six-page-narrative"
+    },
+    {
+      "id": "sme-outreach",
+      "name": "sme-outreach",
+      "description": "Draft a ready-to-send email to a subject matter expert (city staff, nonprofit professional, or community organization) asking specific questions that only a human with lived experience or institutional access can answer.",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "hackathon",
+        "sme",
+        "outreach"
+      ],
+      "source_repos": [
+        "hack4rva/2026-annual-hackathon"
+      ],
+      "source_paths": [
+        "hack4rva/2026-annual-hackathon:skills/sme-outreach/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill sme-outreach",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "rva-hacks-2026",
+      "path": "skills/writing/sme-outreach"
+    },
+    {
+      "id": "synthesize",
+      "name": "synthesize",
+      "description": "The single transformation primitive of Hardcopy Tools' synthesize contract (vendored from markdown-soul). Takes Markdown content + a required brief.md (persona, voice, throughline, channels, stakes) + a constraint bundle and returns brief-faithful Markdown. REFUSES to run without a brief — voice resolves from ~/.me/voices/<name>.md, channels from ~/.me/channels/<name>.md. Outputs land in .output/<bundle>/<channel>/{post,to-research,tighten,unresolved,synthesis-map}.md. Bundles live in bundles/<name>/BUNDLE.md and declare non-voice references plus a mode (edit, synthesis, polish, compress). Use when the user asks to apply hand-marked edits to a draft, weave a new post from source materials, refactor or tighten a draft in their voice, elevate raw notes into a publishable piece, compress an operational message to KSP structure, rewrite for Slack, or any other \"Markdown in → brief-faithful Markdown out\" transformation. Trigger phrases include \"apply my edits\", \"compose from these sources\", \"weave these into a post\", \"refactor this draft\", \"tighten this\", \"rewrite in my voice\", \"elevate this\", \"compress this\", \"KSP this\". Auto-detects the appropriate bundle from input shape and dictation; user can name the bundle explicitly. Not for scoring (see ksp-score) or multi-channel rollout sequencing (see comm-plan).",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "hardcopy-draft",
+        "synthesize"
+      ],
+      "source_repos": [
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/cozy-core-foundation:contract/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill synthesize",
+      "last_updated": "2026-07-16",
+      "license": "MIT",
+      "related_project": "hardcopy-draft",
+      "path": "skills/writing/synthesize"
+    },
+    {
+      "id": "voice-faithful-drafting",
+      "name": "voice-faithful-drafting",
+      "description": "Draft, rewrite, or weave a long-form piece in one named person's voice, governed by a required brief stating persona, throughline, channel, and stakes. Refuses to run without the brief, and refuses to infer persona or throughline from the source material. Use when rewriting a draft in someone's voice, elevating notes or a transcript into a publishable piece, weaving several sources into one post, or producing one piece for several channels. Trigger phrases include rewrite this in my voice, tighten this draft, refactor this post, elevate these notes, polish this, weave these into a post, compose from these sources, make this publishable. Not for operational messages, proofreading, or fact-checking.",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "skills-library",
+        "voice",
+        "faithful",
+        "drafting"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:voice-faithful-drafting/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill voice-faithful-drafting",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/writing/voice-faithful-drafting"
+    },
+    {
+      "id": "adr-author",
+      "name": "adr-author",
+      "description": "Write a new Architecture Decision Record for Jungl3 under docs/decisions/, matching the Nygard-trimmed format established by ADRs 0001–0003. Use when a decision has been made that closes off options, resolves an open question from CLAUDE.md §11, or makes a choice costly to reverse — and the decision is ready to be pinned rather than left ambient in chat.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "jungl3",
+        "adr",
+        "author"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/jungl3"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/jungl3:.cursor/skills/adr-author/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill adr-author",
+      "last_updated": "2026-04-25",
+      "license": "MIT",
+      "related_project": "jungle",
+      "path": "skills/engineering/adr-author"
+    },
+    {
+      "id": "billing-and-credits",
+      "name": "billing-and-credits",
+      "description": "Change anything money-adjacent — credit packs, the credit ledger, reservations, Stripe checkout, the Stripe webhook, purchase records, refunds/chargebacks, the paywall, or the billing page. Use for tasks mentioning credits, balance, checkout, Stripe, prices, purchases, paywall, refunds, or \"Get credits\". The detailed money rules live in docs/BILLING.md; this skill routes you to them and to the code that implements them.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "hardcopy-draft",
+        "billing",
+        "credits"
+      ],
+      "source_repos": [
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/cozy-core-foundation:.cursor/skills/billing-and-credits/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill billing-and-credits",
+      "last_updated": "2026-07-16",
+      "license": "MIT",
+      "related_project": "hardcopy-draft",
+      "path": "skills/engineering/billing-and-credits"
+    },
+    {
+      "id": "compliance-control-audit",
+      "name": "compliance-control-audit",
+      "description": "Audit running cloud infrastructure against a named control set and produce findings an auditor can re-derive and an engineer can act on. Reports what was not checked as loudly as what failed. Read-only; never changes infrastructure. Use before an audit window, after an infrastructure change, or when someone asks how compliant an account is. Trigger phrases include compliance audit, SOC 2 evidence, control gap analysis, are we compliant, findings report, security posture review, check our controls, audit readiness, CIS benchmark check.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "skills-library",
+        "compliance",
+        "control",
+        "audit"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:compliance-control-audit/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill compliance-control-audit",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/engineering/compliance-control-audit"
+    },
+    {
+      "id": "corpus-transform",
+      "name": "corpus-transform",
+      "description": "Design an expensive, long-running transformation over a large corpus so that a crash loses at most one item, a resume neither duplicates nor skips work, partial output is never mistaken for a complete corpus, and spend stops at a ceiling you chose. Covers checkpoint key design, atomic writes, validate-before-write ordering, and per-item versus run-level failure handling. Use when running a paid model or API over thousands of records, enriching a whole dataset, backfilling a table, or re-running a job that died partway. Trigger phrases include batch process, run over the whole corpus, resume from checkpoint, it died halfway, backfill, bulk enrich, how much will this cost, pick up where it left off, idempotent pipeline.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "skills-library",
+        "corpus",
+        "transform"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:corpus-transform/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill corpus-transform",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/engineering/corpus-transform"
+    },
+    {
+      "id": "mobile-ui-polish",
+      "name": "mobile-ui-polish",
+      "description": "Refine the existing Hardcopy Draft UI mobile-first without redesigning it — responsive layout, touch targets, safe areas, keyboard behavior, overflow, breakpoints, including the billing/paywall surfaces. Use for tasks mentioning mobile layout, phone screens, responsive fixes, UI polish, touch/tap issues, viewport or keyboard problems. Preserves the editorial dark visual identity; never expands features.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "hardcopy-draft",
+        "mobile",
+        "polish"
+      ],
+      "source_repos": [
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/cozy-core-foundation:.cursor/skills/mobile-ui-polish/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill mobile-ui-polish",
+      "last_updated": "2026-07-16",
+      "license": "MIT",
+      "related_project": "hardcopy-draft",
+      "path": "skills/engineering/mobile-ui-polish"
+    },
+    {
+      "id": "model-selection-and-spend",
+      "name": "model-selection-and-spend",
+      "description": "Decide which Cursor model class to use, when to escalate to a premium model, and how to keep spend within policy. Use for tasks mentioning model choice, escalation, Cloud Agent dispatch, Composer / Sonnet / Opus, premium models, release certification, Max Mode, spend limits, cost tracking, or any decision where the wrong model class would waste money (or, worse, produce low-quality output on a high-risk change). Advisory only — this skill cannot switch the active model; the enforceable controls live in docs/CURSOR-CONFIG.md.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "hardcopy-draft",
+        "model",
+        "selection",
+        "spend"
+      ],
+      "source_repos": [
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/cozy-core-foundation:.cursor/skills/model-selection-and-spend/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill model-selection-and-spend",
+      "last_updated": "2026-07-16",
+      "license": "MIT",
+      "related_project": "hardcopy-draft",
+      "path": "skills/engineering/model-selection-and-spend"
+    },
+    {
+      "id": "multi-agent-coordination",
+      "name": "multi-agent-coordination",
+      "description": "Coordinate with the Lovable agent through the docs/coordination/ inbox/outbox protocol — reading incoming requests, filing work items with WI-nnnn IDs, handing off backend actions (applying migrations, deploys, secrets, test accounts, live verification), and updating shared state without overwriting the other agent's records. Use at the start of any material task, whenever work requires the connected/deployed environment, and whenever a task produces results the Lovable agent or a human must act on.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "hardcopy-draft",
+        "multi",
+        "agent",
+        "coordination"
+      ],
+      "source_repos": [
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/cozy-core-foundation:.cursor/skills/multi-agent-coordination/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill multi-agent-coordination",
+      "last_updated": "2026-07-16",
+      "license": "MIT",
+      "related_project": "hardcopy-draft",
+      "path": "skills/engineering/multi-agent-coordination"
+    },
+    {
+      "id": "multi-agent-turn-taking",
+      "name": "multi-agent-turn-taking",
+      "description": "Decide which agent or persona speaks next in a shared live conversation, running a deterministic blocking gate first and letting a model arbitrate only among the candidates that survive it. Covers the five blocking rules, the bounded arbiter, and where turn state has to live for a correct-looking gate to block anything at all. Use when several bots, personas, or agents share one channel and one of them dominates, two ping-pong, the same prompt gets answered twice, or rate limits are silently exceeded. Trigger phrases include who speaks next, bots talking over each other, agent keeps replying to itself, ping-pong loop, one persona dominates, speaker selection, reply cooldown, turn arbitration, multi-bot channel.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "skills-library",
+        "multi",
+        "agent",
+        "turn"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:multi-agent-turn-taking/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill multi-agent-turn-taking",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/engineering/multi-agent-turn-taking"
+    },
+    {
+      "id": "multi-tenant-saas-isolation",
+      "name": "multi-tenant-saas-isolation",
+      "description": "Enforce tenant boundaries in a multi-tenant application so that no single bug leaks another tenant's data. Covers where tenant identity may come from, the scoping shape that makes isolation enforceable in the storage layer, why tenant context must never travel through an LLM prompt, signature-then-parse ordering for billing webhooks, fail-closed entitlement checks, and the four tests that are the only evidence the layers compose. Use when writing or reviewing a handler that reads tenant-scoped data, wiring IAM for a tenant-facing role, invoking a model on customer data, handling a Stripe or billing webhook, gating a feature by plan, or auditing a multi-tenant app before production traffic. Trigger phrases include multi-tenant, tenant isolation, tenant spoofing, LeadingKeys, cross-tenant leak, entitlement check, quota, webhook signature, prompt injection, is this safe for real customers.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "skills-library",
+        "multi",
+        "tenant",
+        "saas"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:multi-tenant-saas-isolation/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill multi-tenant-saas-isolation",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/engineering/multi-tenant-saas-isolation"
+    },
+    {
+      "id": "openclaw-aws-bootstrap",
+      "name": "openclaw-aws-bootstrap",
+      "description": "Bootstrap the AWS infrastructure for an OpenClaw deployment — region selection, instance type sizing, Bedrock model selection, IAM role, S3 bucket, SSM access. Use after openclaw-prerequisites passes and before openclaw-deploy.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "openclaw",
+        "aws",
+        "bootstrap"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/openclaw-public"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/openclaw-public:.cursor/skills/openclaw-aws-bootstrap/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill openclaw-aws-bootstrap",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "openclaw",
+      "path": "skills/engineering/openclaw-aws-bootstrap"
+    },
+    {
+      "id": "openclaw-channel-setup",
+      "name": "openclaw-channel-setup",
+      "description": "Connect the deployed OpenClaw instance to a Telegram bot — token configuration, group/topic setup, allowlist gates, the requireMention semantics. Use after openclaw-deploy; assumes the gateway is running on EC2.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "openclaw",
+        "channel",
+        "setup"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/openclaw-public"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/openclaw-public:.cursor/skills/openclaw-channel-setup/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill openclaw-channel-setup",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "openclaw",
+      "path": "skills/engineering/openclaw-channel-setup"
+    },
+    {
+      "id": "openclaw-customize-workspace",
+      "name": "openclaw-customize-workspace",
+      "description": "Turn the patterns/*.example.md templates into a real personal workspace for an OpenClaw deployment — fill in identity, user profile, tone, tools, operating rules, and initial memory. Use after AWS bootstrap and before deploy.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "openclaw",
+        "customize",
+        "workspace"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/openclaw-public"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/openclaw-public:.cursor/skills/openclaw-customize-workspace/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill openclaw-customize-workspace",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "openclaw",
+      "path": "skills/engineering/openclaw-customize-workspace"
+    },
+    {
+      "id": "openclaw-deploy",
+      "name": "openclaw-deploy",
+      "description": "Deploy a customized OpenClaw workspace to a running EC2 instance via SSM. Covers initial deployment, the auto-sync cron pattern, and how to verify a deploy succeeded. Use after openclaw-customize-workspace; assumes the EC2 instance is provisioned and the workspace files exist in a private repo.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "openclaw",
+        "deploy"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/openclaw-public"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/openclaw-public:.cursor/skills/openclaw-deploy/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill openclaw-deploy",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "openclaw",
+      "path": "skills/engineering/openclaw-deploy"
+    },
+    {
+      "id": "openclaw-prerequisites",
+      "name": "openclaw-prerequisites",
+      "description": "Verify prerequisites before deploying OpenClaw — AWS account access, Bedrock model enablement, SSM plugin, Telegram bot token, optional Parallel AI key. Use this skill at the start of any setup session, before any AWS resource creation or repo configuration.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "openclaw",
+        "prerequisites"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/openclaw-public"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/openclaw-public:.cursor/skills/openclaw-prerequisites/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill openclaw-prerequisites",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "openclaw",
+      "path": "skills/engineering/openclaw-prerequisites"
+    },
+    {
+      "id": "openclaw-research-pipeline",
+      "name": "openclaw-research-pipeline",
+      "description": "Set up the optional deep-research pipeline — Parallel AI for the research engine, a separate GitHub repo as the published research library, and GitHub Actions to rebuild the index on push. Skip this skill entirely if research is not a wanted capability.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "openclaw",
+        "research",
+        "pipeline"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/openclaw-public"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/openclaw-public:.cursor/skills/openclaw-research-pipeline/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill openclaw-research-pipeline",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "openclaw",
+      "path": "skills/engineering/openclaw-research-pipeline"
+    },
+    {
+      "id": "openclaw-troubleshooting",
+      "name": "openclaw-troubleshooting",
+      "description": "Diagnose and fix common OpenClaw deployment issues — bot not responding, gateway service crashed, config rejected, deploy failing, voice memos ignored, etc. Use this skill when something is broken; consult it BEFORE proposing fixes, to avoid the Sisyphus pattern of fixing the wrong file.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "openclaw",
+        "troubleshooting"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/openclaw-public"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/openclaw-public:.cursor/skills/openclaw-troubleshooting/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill openclaw-troubleshooting",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "openclaw",
+      "path": "skills/engineering/openclaw-troubleshooting"
+    },
+    {
+      "id": "print-artifact-fidelity",
+      "name": "print-artifact-fidelity",
+      "description": "Change the print-for-markup pipeline with deterministic US Letter output — page geometry, margins, S{n}P{m} block anchors, pagination, the print-document builder, the fidelity test harness. Use for tasks mentioning printing, PDF output, page breaks, margins, anchors, clipped or overflowing printed content, or print preview fidelity. Enforces the print.css ↔ MARKUP.md anchor sync contract.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "hardcopy-draft",
+        "print",
+        "artifact",
+        "fidelity"
+      ],
+      "source_repos": [
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/cozy-core-foundation:.cursor/skills/print-artifact-fidelity/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill print-artifact-fidelity",
+      "last_updated": "2026-07-16",
+      "license": "MIT",
+      "related_project": "hardcopy-draft",
+      "path": "skills/engineering/print-artifact-fidelity"
+    },
+    {
+      "id": "production-readiness",
+      "name": "production-readiness",
+      "description": "Pre-merge and pre-release review of Hardcopy Draft changes — run every required check, verify failure/loading/retry states, confirm no secret leakage, list unresolved risks and rollback options. Use for tasks mentioning release, ship, production, final review, hardening, resilience, error states, or \"is this ready\". Also the skill for reviewing failure behavior (loading, empty, timeout, retry, partial failure).",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "hardcopy-draft",
+        "production",
+        "readiness"
+      ],
+      "source_repos": [
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/cozy-core-foundation:.cursor/skills/production-readiness/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill production-readiness",
+      "last_updated": "2026-07-16",
+      "license": "MIT",
+      "related_project": "hardcopy-draft",
+      "path": "skills/engineering/production-readiness"
+    },
+    {
+      "id": "repository-orientation",
+      "name": "repository-orientation",
+      "description": "Build an accurate working model of a codebase you have not seen before, treating its documentation as claims to verify against code rather than as ground truth. Labels every fact Verified, Partial, Missing, or External, so the model you edit from distinguishes what you confirmed from what you assumed. Prevents reading a README, believing it, and then editing the wrong layer or rebuilding something that already exists. Use before any task touching more than one file or an unfamiliar area, before creating a new file, helper, or component, and when asked where something lives. Trigger phrases include where does X live, how does this repo work, orient me, unfamiliar codebase, before I start, does this already exist, what layer should this go in, onboard to this repo.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "skills-library",
+        "repository",
+        "orientation"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library",
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:repository-orientation/SKILL.md",
+        "ford-at-home/cozy-core-foundation:.cursor/skills/repository-orientation/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill repository-orientation",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/engineering/repository-orientation"
+    },
+    {
+      "id": "run-orchestration-change",
+      "name": "run-orchestration-change",
+      "description": "Change the agent-run orchestration and cost-accounting subsystem — dispatch, webhooks, the reconciler, run state machine, idempotency keys, inference/cost recording, model pricing. Use for tasks mentioning agent runs, run statuses, stuck runs, webhook events, dispatch, reconciliation, duplicate events, costs, pricing, or sessions. This is the money-adjacent subsystem: idempotency and monotonic state are non-negotiable.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "hardcopy-draft",
+        "run",
+        "orchestration",
+        "change"
+      ],
+      "source_repos": [
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/cozy-core-foundation:.cursor/skills/run-orchestration-change/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill run-orchestration-change",
+      "last_updated": "2026-07-16",
+      "license": "MIT",
+      "related_project": "hardcopy-draft",
+      "path": "skills/engineering/run-orchestration-change"
+    },
+    {
+      "id": "subsystem-change-safety",
+      "name": "subsystem-change-safety",
+      "description": "Change a subsystem that already has users or data depending on it, where a mistake is expensive and does not announce itself. Establishes a baseline, enumerates the invariants, separates what fails loudly from what degrades silently, triages by reversibility, and orders migration and rollback. Use before editing a scoring or prediction engine, a database schema or access policy, a job orchestration layer, a state machine, a cost or accounting path, or a deployed configuration. Trigger phrases include is this change safe, will this break anything, schema migration, add a column, change the weights, row-level policy, state machine, idempotency, webhook handling, cost accounting, rollback plan, before I touch this, refactor without changing behavior.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "skills-library",
+        "subsystem",
+        "change",
+        "safety"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:subsystem-change-safety/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill subsystem-change-safety",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/engineering/subsystem-change-safety"
+    },
+    {
+      "id": "supabase-change",
+      "name": "supabase-change",
+      "description": "Make safe Supabase backend changes — schema migrations, RLS policies, Edge Functions, config.toml, storage policies, backend secrets. Use for tasks mentioning database tables, columns, migrations, row level security, policies, edge functions, webhooks infrastructure, or Supabase configuration. Preserves the client/server boundary and documents manual dashboard steps instead of claiming them done.",
+      "category": "engineering",
+      "tags": [
+        "engineering",
+        "hardcopy-draft",
+        "supabase",
+        "change"
+      ],
+      "source_repos": [
+        "ford-at-home/cozy-core-foundation"
+      ],
+      "source_paths": [
+        "ford-at-home/cozy-core-foundation:.cursor/skills/supabase-change/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill supabase-change",
+      "last_updated": "2026-07-16",
+      "license": "MIT",
+      "related_project": "hardcopy-draft",
+      "path": "skills/engineering/supabase-change"
+    },
+    {
+      "id": "assumption-mapping",
+      "name": "assumption_mapping",
+      "description": "Identify and prioritize risky assumptions to test before building.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "assumption",
+        "mapping"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/assumption_mapping/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/assumption_mapping/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/assumption_mapping/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/assumption_mapping/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/assumption_mapping/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/assumption_mapping/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/assumption_mapping/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill assumption-mapping",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/assumption-mapping"
+    },
+    {
+      "id": "blue-ocean-reframing",
+      "name": "blue_ocean_reframing",
+      "description": "Redefine a problem space by eliminating competition and assumptions.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "blue",
+        "ocean",
+        "reframing"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/blue_ocean_reframing/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/blue_ocean_reframing/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/blue_ocean_reframing/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/blue_ocean_reframing/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/blue_ocean_reframing/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/blue_ocean_reframing/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/blue_ocean_reframing/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill blue-ocean-reframing",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/blue-ocean-reframing"
+    },
+    {
+      "id": "continuity-planner",
+      "name": "continuity_planner",
+      "description": "Identify post-hackathon continuation opportunities and next steps.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "continuity",
+        "planner"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/continuity_planner/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/continuity_planner/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/continuity_planner/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/continuity_planner/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/continuity_planner/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/continuity_planner/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/continuity_planner/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill continuity-planner",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/continuity-planner"
+    },
+    {
+      "id": "demo-coach",
+      "name": "demo_coach",
+      "description": "Help teams present effectively and score against the rubric.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "demo",
+        "coach"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/demo_coach/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/demo_coach/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/demo_coach/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/demo_coach/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/demo_coach/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/demo_coach/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/demo_coach/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill demo-coach",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/demo-coach"
+    },
+    {
+      "id": "demo-production",
+      "name": "demo-production",
+      "description": "Use when building a scripted terminal-UI demo program whose output is entirely fixtures (no live backend) and which must serve three consumers at once — a human driving it live, a screen recorder driving a real PTY, and CI running it headless. Covers the runtime contracts that program must satisfy — a fast mode that stays deterministic, replay-safe beats, exit-code-only smoke testing, and a disclosure block. Not about the recorder, tape files, or output encoding.",
+      "category": "product",
+      "tags": [
+        "product",
+        "skills-library",
+        "demo",
+        "production"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:demo-production/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill demo-production",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/product/demo-production"
+    },
+    {
+      "id": "idea-to-landing-page",
+      "name": "idea-to-landing-page",
+      "description": "Take a raw product idea to a live page that tests whether anyone wants it, without building the product. Writes the hypothesis and the pass/fail threshold before the page exists, holds the page to what actually exists so it cannot promise a working product it does not have, and refuses auth, payments, dashboards, and backend logic. Use when you have an idea and want a demand signal, need a waitlist or pre-launch page, are tempted to start building to find out if people care, or someone says just spin up a quick landing page. Trigger phrases include validate my idea, landing page, waitlist, coming soon page, test demand, pre-launch, will anyone use this, should I build this.",
+      "category": "product",
+      "tags": [
+        "product",
+        "skills-library",
+        "idea",
+        "landing",
+        "page"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:idea-to-landing-page/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill idea-to-landing-page",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/product/idea-to-landing-page"
+    },
+    {
+      "id": "jobs-to-be-done-analysis",
+      "name": "jobs_to_be_done_analysis",
+      "description": "Identify the real user need behind a problem using JTBD framing.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "jobs",
+        "done",
+        "analysis"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/jobs_to_be_done_analysis/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/jobs_to_be_done_analysis/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/jobs_to_be_done_analysis/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/jobs_to_be_done_analysis/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/jobs_to_be_done_analysis/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/jobs_to_be_done_analysis/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/jobs_to_be_done_analysis/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill jobs-to-be-done-analysis",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/jobs-to-be-done-analysis"
+    },
+    {
+      "id": "lean-mvp-experimentation",
+      "name": "lean_mvp_experimentation",
+      "description": "Test a hypothesis using the smallest possible implementation.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "lean",
+        "mvp",
+        "experimentation"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/lean_mvp_experimentation/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/lean_mvp_experimentation/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/lean_mvp_experimentation/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/lean_mvp_experimentation/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/lean_mvp_experimentation/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/lean_mvp_experimentation/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/lean_mvp_experimentation/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill lean-mvp-experimentation",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/lean-mvp-experimentation"
+    },
+    {
+      "id": "mvp-designer",
+      "name": "mvp_designer",
+      "description": "Turn an approved opportunity into a concrete MVP plan.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "mvp",
+        "designer"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/mvp_designer/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/mvp_designer/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/mvp_designer/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/mvp_designer/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/mvp_designer/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/mvp_designer/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/mvp_designer/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill mvp-designer",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/mvp-designer"
+    },
+    {
+      "id": "opportunity-mapper",
+      "name": "opportunity_mapper",
+      "description": "Translate research into concrete, buildable solution opportunities.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "opportunity",
+        "mapper"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/opportunity_mapper/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/opportunity_mapper/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/opportunity_mapper/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/opportunity_mapper/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/opportunity_mapper/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/opportunity_mapper/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/opportunity_mapper/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill opportunity-mapper",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/opportunity-mapper"
+    },
+    {
+      "id": "problem-scoping",
+      "name": "problem_scoping",
+      "description": "Help the team choose a strong, weekend-feasible problem direction.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "problem",
+        "scoping"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/problem_scoping/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/problem_scoping/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/problem_scoping/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/problem_scoping/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/problem_scoping/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/problem_scoping/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/problem_scoping/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill problem-scoping",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/problem-scoping"
+    },
+    {
+      "id": "prompt-driven-ui-rebuild",
+      "name": "prompt-driven-ui-rebuild",
+      "description": "Build or rebuild a user interface as an ordered sequence of prompts, each starting from verified output rather than accumulated drift. Factors the design system into its own first step, referenced by path thereafter and never restated, and gives every step acceptance criteria and a rejection list that refuses plausible-looking wrong output. Assumes the decision to build has been made — testing whether anyone wants it first is idea-to-landing-page. Works with any prompt-driven builder or a plain coding agent. Use when generating a UI from prompts, rebuilding a front end, restyling an existing app, or recovering a generated codebase that has drifted. Trigger phrases include prompt sequence, rebuild the UI, generate the front end, one-shot the site, restyle the app, the AI keeps changing my styles, design system drift, my generated code is a mess.",
+      "category": "product",
+      "tags": [
+        "product",
+        "skills-library",
+        "prompt",
+        "driven",
+        "rebuild"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:prompt-driven-ui-rebuild/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill prompt-driven-ui-rebuild",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/product/prompt-driven-ui-rebuild"
+    },
+    {
+      "id": "rapid-design-sprint",
+      "name": "rapid_design_sprint",
+      "description": "Run a compressed design sprint to move from problem → prototype within hours.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "rapid",
+        "design",
+        "sprint"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/rapid_design_sprint/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/rapid_design_sprint/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/rapid_design_sprint/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/rapid_design_sprint/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/rapid_design_sprint/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/rapid_design_sprint/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/rapid_design_sprint/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill rapid-design-sprint",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/rapid-design-sprint"
+    },
+    {
+      "id": "rapid-ideation-crazy8s",
+      "name": "rapid_ideation_crazy8s",
+      "description": "Generate a high volume of ideas quickly to avoid early convergence.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "rapid",
+        "ideation",
+        "crazy8s"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/rapid_ideation_crazy8s/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/rapid_ideation_crazy8s/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/rapid_ideation_crazy8s/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/rapid_ideation_crazy8s/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/rapid_ideation_crazy8s/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/rapid_ideation_crazy8s/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/rapid_ideation_crazy8s/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill rapid-ideation-crazy8s",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/rapid-ideation-crazy8s"
+    },
+    {
+      "id": "systems-mapping",
+      "name": "systems_mapping",
+      "description": "Map interconnected systems to identify leverage points for intervention.",
+      "category": "product",
+      "tags": [
+        "product",
+        "pillar-research",
+        "systems",
+        "mapping"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/systems_mapping/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/systems_mapping/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/systems_mapping/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/systems_mapping/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/systems_mapping/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/systems_mapping/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/systems_mapping/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill systems-mapping",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/product/systems-mapping"
+    },
+    {
+      "id": "ai-assisted-evaluation",
+      "name": "AI-Assisted Evaluation",
+      "description": "Run a structured AI evaluation pass over the full submission corpus",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "assisted",
+        "evaluation"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/15-ai-assisted-evaluation.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill ai-assisted-evaluation",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/ai-assisted-evaluation"
+    },
+    {
+      "id": "civic-alignment",
+      "name": "Civic Alignment",
+      "description": "Anchor the event in a real, public, government-owned strategic plan",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "alignment"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/01-civic-alignment.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill civic-alignment",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/civic-alignment"
+    },
+    {
+      "id": "civic-alignment-check",
+      "name": "civic_alignment_check",
+      "description": "Ensure solution aligns with Richmond MAP pillars and real city constraints.",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "pillar-research",
+        "alignment"
+      ],
+      "source_repos": [
+        "hack4rva/pillar-thriving-built-environment",
+        "hack4rva/pillar-thriving-economy",
+        "hack4rva/pillar-thriving-city-hall",
+        "hack4rva/pillar-thriving-families",
+        "hack4rva/pillar-thriving-neighborhoods",
+        "hack4rva/pillar-thriving-inclusive-communities",
+        "hack4rva/pillar-city-storytelling"
+      ],
+      "source_paths": [
+        "hack4rva/pillar-thriving-built-environment:skills/civic_alignment_check/SKILL.md",
+        "hack4rva/pillar-thriving-economy:skills/civic_alignment_check/SKILL.md",
+        "hack4rva/pillar-thriving-city-hall:skills/civic_alignment_check/SKILL.md",
+        "hack4rva/pillar-thriving-families:skills/civic_alignment_check/SKILL.md",
+        "hack4rva/pillar-thriving-neighborhoods:skills/civic_alignment_check/SKILL.md",
+        "hack4rva/pillar-thriving-inclusive-communities:skills/civic_alignment_check/SKILL.md",
+        "hack4rva/pillar-city-storytelling:skills/civic_alignment_check/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill civic-alignment-check",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "map-pillars",
+      "path": "skills/civic/civic-alignment-check"
+    },
+    {
+      "id": "community-outreach-plan",
+      "name": "Community Outreach Plan",
+      "description": "Plan and stage the public communications that bring participants,",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "community",
+        "outreach",
+        "plan"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/09-community-outreach-plan.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill community-outreach-plan",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/community-outreach-plan"
+    },
+    {
+      "id": "data-readiness",
+      "name": "Data Readiness",
+      "description": "For every dataset the problem statements reference, answer four",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "data",
+        "readiness"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/07-data-readiness.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill data-readiness",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/data-readiness"
+    },
+    {
+      "id": "event-charter",
+      "name": "Event Charter",
+      "description": "Convert civic alignment into a small set of documents the",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "event",
+        "charter"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/02-event-charter.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill event-charter",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/event-charter"
+    },
+    {
+      "id": "event-operations-plan",
+      "name": "Event Operations Plan",
+      "description": "Resolve everything upstream into the operational artifacts the",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "event",
+        "operations",
+        "plan"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/12-event-operations-plan.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill event-operations-plan",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/event-operations-plan"
+    },
+    {
+      "id": "governance-model",
+      "name": "Governance Model",
+      "description": "Define how the event is governed: the organizing body's structure,",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "governance",
+        "model"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/04-governance-model.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill governance-model",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/governance-model"
+    },
+    {
+      "id": "judging-system",
+      "name": "Judging System",
+      "description": "Define how the event evaluates and recognizes work: rubric, awards",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "judging",
+        "system"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/14-judging-system.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill judging-system",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/judging-system"
+    },
+    {
+      "id": "mentor-volunteer-ops",
+      "name": "Mentor and Volunteer Ops",
+      "description": "Recruit, onboard, and schedule the two cohorts that make an event",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "mentor",
+        "volunteer",
+        "ops"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/11-mentor-volunteer-ops.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill mentor-volunteer-ops",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/mentor-volunteer-ops"
+    },
+    {
+      "id": "open-source-handoff",
+      "name": "Open-Source Handoff",
+      "description": "Define how the event's outputs become public, durable artifacts the",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "open",
+        "source",
+        "handoff"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/17-open-source-handoff.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill open-source-handoff",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/open-source-handoff"
+    },
+    {
+      "id": "participant-experience-plan",
+      "name": "Participant Experience Plan",
+      "description": "Design what a participant actually goes through: register, arrive,",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "participant",
+        "experience",
+        "plan"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/10-participant-experience-plan.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill participant-experience-plan",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/participant-experience-plan"
+    },
+    {
+      "id": "partnership-and-sponsor-plan",
+      "name": "Partnership and Sponsor Plan",
+      "description": "Define how the event raises money, in-kind contributions, and",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "partnership",
+        "sponsor",
+        "plan"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/08-partnership-and-sponsor-plan.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill partnership-and-sponsor-plan",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/partnership-and-sponsor-plan"
+    },
+    {
+      "id": "pillar-pipeline",
+      "name": "pillar-pipeline",
+      "description": "A two-pipeline system that (A) evaluates hackathon submissions against the actual problem they were supposed to solve, and (B) independently discovers the highest-leverage opportunities from the problem statements themselves. Submissions are judged by the problem frame — not the other way around.",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "pillar",
+        "pipeline"
+      ],
+      "source_repos": [
+        "hack4rva/2026-annual-hackathon"
+      ],
+      "source_paths": [
+        "hack4rva/2026-annual-hackathon:skills/pillar-pipeline/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill pillar-pipeline",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "rva-hacks-2026",
+      "path": "skills/civic/pillar-pipeline"
+    },
+    {
+      "id": "pillar-program-design",
+      "name": "pillar-program-design",
+      "description": "Turn a public strategic plan into a small set of thematic pillars, each carrying scoped problem statements a team can build against in a weekend. Forces every statement to name a specific user cohort, describe a current-state problem rather than a solution, anchor to a named dataset with an owner and an access path, and carry a named person inside the sponsoring institution who will answer questions. Use when planning a civic hackathon, an internal innovation program, a grant challenge, an ideas competition, or any call for proposals organized around themes. Trigger phrases include define the tracks, hackathon pillars, problem statements, challenge statements, what should teams build, civic program design, scope the themes, turn priorities into projects.",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "skills-library",
+        "pillar",
+        "program",
+        "design"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:pillar-program-design/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill pillar-program-design",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/civic/pillar-program-design"
+    },
+    {
+      "id": "plugin-orientation",
+      "name": "Plugin Orientation",
+      "description": "Inspect the repository, classify what planning work is present vs.",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "plugin",
+        "orientation"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/00-plugin-orientation.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill plugin-orientation",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/plugin-orientation"
+    },
+    {
+      "id": "post-event-pipeline",
+      "name": "Post-Event Pipeline",
+      "description": "Convert the event's outputs (submissions + AI evaluation + judging",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "post",
+        "event",
+        "pipeline"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/16-post-event-pipeline.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill post-event-pipeline",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/post-event-pipeline"
+    },
+    {
+      "id": "problem-statement-development",
+      "name": "Problem Statement Development",
+      "description": "Convert each track into named, scoped, data-grounded problem",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "problem",
+        "statement",
+        "development"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/06-problem-statement-development.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill problem-statement-development",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/problem-statement-development"
+    },
+    {
+      "id": "retrospective-and-next-year-plan",
+      "name": "Retrospective and Next-Year Plan",
+      "description": "Close the loop. Compare what actually happened to what was",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "retrospective",
+        "next",
+        "year"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/18-retrospective-and-next-year-plan.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill retrospective-and-next-year-plan",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/retrospective-and-next-year-plan"
+    },
+    {
+      "id": "stakeholder-map",
+      "name": "Stakeholder Map",
+      "description": "Identify every category of stakeholder, every named partner, and",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "stakeholder",
+        "map"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/03-stakeholder-map.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill stakeholder-map",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/stakeholder-map"
+    },
+    {
+      "id": "technology-setup",
+      "name": "Technology Setup",
+      "description": "Decide and document every tool the event runs on: communications,",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "technology",
+        "setup"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/13-technology-setup.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill technology-setup",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/technology-setup"
+    },
+    {
+      "id": "track-strategy",
+      "name": "Track Strategy",
+      "description": "Decide the track structure: how many tracks, what each is called,",
+      "category": "civic",
+      "tags": [
+        "civic",
+        "hackathon",
+        "track",
+        "strategy"
+      ],
+      "source_repos": [
+        "hack4rva/annual-civic-hackathon-toolkit"
+      ],
+      "source_paths": [
+        "hack4rva/annual-civic-hackathon-toolkit:planning-plugin/skills/05-track-strategy.skill.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill track-strategy",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "civic-hackathon-toolkit",
+      "path": "skills/civic/track-strategy"
+    },
+    {
+      "id": "convene",
+      "name": "convene",
+      "description": "Turns a pace-layers analysis into a plan document and the roster of people to bring into the room to review it together, plus a facilitated \"imagine the future\" session and a short pre-read invitation. Use at the end of a pace-layers session, or whenever someone has a change goal and needs a plan with moves sequenced by pace, the decisions that need owners, and the right decision makers, subject-matter experts, and skeptics in one room.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "convene"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/convene/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill convene",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/convene"
+    },
+    {
+      "id": "goal-at-layer",
+      "name": "goal-at-layer",
+      "description": "Turns a vague change ambition into a precise goal pinned to a pace layer, with the lever layer, a realistic horizon, evidence for done, constraints, anti-goals, and an owner. Use after gathering the situation in a pace-layers session, or on its own when someone says they want to \"adopt AI\", \"go faster\", \"fix our releases\", \"modernize\", or \"change the culture\" and the real goal is unclear, set at the wrong layer, or unrealistic for its timeline.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "goal",
+        "layer"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/goal-at-layer/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill goal-at-layer",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/goal-at-layer"
+    },
+    {
+      "id": "layer-culture",
+      "name": "layer-culture",
+      "description": "Interviews and diagnoses the Organizational Culture layer (ownership, trust, craft standards, incident norms, and what actually gets rewarded and promoted). Use when a change keeps reverting after leadership attention moves on, when stated values and real behavior diverge, when people fear blame for AI-related mistakes, when someone wants to \"change the culture\", or when a pace-layers session identifies Culture as the goal or lever layer.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "layer",
+        "culture"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/layer-culture/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill layer-culture",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/layer-culture"
+    },
+    {
+      "id": "layer-domain",
+      "name": "layer-domain",
+      "description": "Interviews and diagnoses the Domain Architecture and Systems of Record layer (domain model, bounded contexts, canonical data, core systems and vendor packages, integration contracts, and team boundaries). Use when modernizing or migrating a core or legacy system, when every change needs several teams, when AI-generated code is entering core systems, when only a few people understand a critical system, or when a pace-layers session identifies Domain Architecture as the goal or lever layer. Includes a read-only script that finds knowledge concentration in a git repository.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "layer",
+        "domain"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/layer-domain/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill layer-domain",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/layer-domain"
+    },
+    {
+      "id": "layer-generation",
+      "name": "layer-generation",
+      "description": "Interviews and diagnoses the Generation layer, the fastest pace layer, where people and AI agents write code (tools, context files, prompts, local tests, the inner loop). Use when a change involves adopting or scaling coding agents or assistants, developer experience in the inner loop, shadow AI tools, or claims that engineers should be \"faster\", or when a pace-layers session identifies Generation as the goal or lever layer.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "layer",
+        "generation"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/layer-generation/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill layer-generation",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/layer-generation"
+    },
+    {
+      "id": "layer-governance",
+      "name": "layer-governance",
+      "description": "Interviews and diagnoses the Governance layer (security, compliance, risk and model risk, change approval, funding cycles, regulation, and AI policy). Use when approvals or audits are the bottleneck, an AI policy is missing or unclear, teams work around controls, policy-as-code or continuous compliance is being considered, regulation is changing, or when a pace-layers session identifies Governance as the goal or lever layer.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "layer",
+        "governance"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/layer-governance/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill layer-governance",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/layer-governance"
+    },
+    {
+      "id": "layer-nature",
+      "name": "layer-nature",
+      "description": "Interviews and diagnoses the Nature layer, the slowest pace layer, made of constraints an organization cannot change and must design within (human attention and cognitive load, review stamina, how engineers form skills and system knowledge, the labor market, compute cost and physics, and seasonal demand). Use when a change raises workload or review burden, when burnout, skill atrophy, or comprehension debt are concerns, when juniors are not learning, when compute costs matter, or when a pace-layers session identifies Nature as a constraint or lever.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "layer",
+        "nature"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/layer-nature/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill layer-nature",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/layer-nature"
+    },
+    {
+      "id": "layer-platform",
+      "name": "layer-platform",
+      "description": "Interviews and diagnoses the Platform and Infrastructure layer (CI/CD platform, runtime, cloud, internal developer platform, golden paths, model gateway, evaluation suites, and shared agent tooling). Use when teams route around the platform, every team runs its own AI or agent stack, swapping models is hard, platform changes break teams, or a pace-layers session identifies Platform as the goal or lever layer.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "layer",
+        "platform"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/layer-platform/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill layer-platform",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/layer-platform"
+    },
+    {
+      "id": "layer-product",
+      "name": "layer-product",
+      "description": "Interviews and diagnoses the Product and Coordination layer (intent, specs, priorities, roadmaps, intake, and sequencing work across teams). Use when teams ship a lot but outcomes don't move, priorities churn, specs are the bottleneck, spec-driven or agentic development is shifting work upstream, or cross-team coordination dominates, or when a pace-layers session identifies Product and Coordination as the goal or lever layer.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "layer",
+        "product"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/layer-product/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill layer-product",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/layer-product"
+    },
+    {
+      "id": "layer-verification",
+      "name": "layer-verification",
+      "description": "Interviews and diagnoses the Integration and Verification layer (code review, CI, tests, merge, release, observability, incident response, rollback), which is often the binding constraint once AI speeds up code generation. Use when reviews are slow or rubber-stamped, release or change-failure rates are rising, PRs are getting bigger, AI output is outpacing review, or a pace-layers session identifies Verification as the goal or lever layer. Includes a read-only script that measures review flow from GitHub pull-request history.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "layer",
+        "verification"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/layer-verification/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill layer-verification",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/layer-verification"
+    },
+    {
+      "id": "mechanism-designer",
+      "name": "mechanism-designer",
+      "description": "Convert a goal into a recurring operational mechanism with cadence, inputs, outputs, inspection method, escalation rule, and a 30-day trial. Use when a one-off effort needs to become recurring practice, when \"we will try harder\" is the current plan, when a goal has been set but has no operating cadence, or when the user mentions \"mechanism\", \"process\", \"cadence\", or \"operationalize\".",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "amazon-mechanisms",
+        "mechanism",
+        "designer"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/04-mechanism-designer/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill mechanism-designer",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/org-change/mechanism-designer"
+    },
+    {
+      "id": "meeting-decision-tracking",
+      "name": "meeting-decision-tracking",
+      "description": "Run one cycle of a recurring team meeting as a single unit — agenda, notes, tracker sync — where the agenda gives every line a stable item ID and the sync binds actions to tracked items only through that ID, never through title similarity. Exists because title-matching an action against an active tracker silently half-updates two near-duplicate items, and because a cycle that produces an agenda but no tracked work leaves the same decision to be made again in two weeks. Use when a recurring status round-table needs its decisions tracked within hours. Trigger phrases include meeting prep, agenda for tomorrow, weekly sync, turn these notes into issues, sync meeting decisions, nothing got tracked, we decided this already.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "skills-library",
+        "meeting",
+        "decision",
+        "tracking"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:meeting-decision-tracking/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill meeting-decision-tracking",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/org-change/meeting-decision-tracking"
+    },
+    {
+      "id": "pace-layers",
+      "name": "pace-layers",
+      "description": "Guides a person through planning a change in how their software organization works, using a pace-layer model adapted from Stewart Brand. Use when someone wants to change their engineering, product, platform, governance, or delivery organization (adopting AI coding agents, fixing slow reviews or releases, modernizing a core system, changing approval processes, shifting culture), or asks where to push, who to involve, or why a change keeps stalling. Gathers the situation first, pins the goal to a layer, interviews that layer, checks the boundaries between layers, then produces a plan document and the list of people to bring into the room to pressure-test it.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "pace",
+        "layers"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/pace-layers/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill pace-layers",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/pace-layers"
+    },
+    {
+      "id": "recurring-mechanism-design",
+      "name": "recurring-mechanism-design",
+      "description": "Convert a goal into a recurring mechanism that keeps working after the motivation that set it is gone, by designing against silent decay specifically — the inspector is never the owner, escalation fires on a missed run rather than only on a bad result, and the author must name how the mechanism will fail while still looking healthy. Produces a spec, not a running process. Refuses a team as owner, \"as needed\" as a cadence, and a run that produces no artifact. Use when a one-off effort needs to become recurring practice, or when the current plan is \"we will try harder\". Trigger phrases include mechanism, operationalize, cadence, make this stick, process for this, how do we keep doing this, who owns this ongoing, turn this into a habit.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "skills-library",
+        "recurring",
+        "mechanism",
+        "design"
+      ],
+      "source_repos": [
+        "ford-at-home/skills-library"
+      ],
+      "source_paths": [
+        "ford-at-home/skills-library:recurring-mechanism-design/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill recurring-mechanism-design",
+      "last_updated": "2026-07-28",
+      "license": "MIT",
+      "related_project": null,
+      "path": "skills/org-change/recurring-mechanism-design"
+    },
+    {
+      "id": "shear-check",
+      "name": "shear-check",
+      "description": "Diagnoses the boundaries (\"shears\") between adjacent pace layers, where tension builds because the two sides move at different speeds and where change efforts most often fail because nobody owns the boundary. Use after layer interviews in a pace-layers session, or on its own when work piles up between two groups, a handoff keeps failing, a speedup in one area created a queue somewhere else, or nobody can say who owns a boundary such as code generation vs. review, delivery vs. outcomes, platform vs. core system, or compliance vs. engineering.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "pace-layers",
+        "shear"
+      ],
+      "source_repos": [
+        "Flying-Pig-Labs/pace-layers"
+      ],
+      "source_paths": [
+        "Flying-Pig-Labs/pace-layers:skills/shear-check/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill shear-check",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "pace-layers",
+      "path": "skills/org-change/shear-check"
+    },
+    {
+      "id": "weekly-business-review",
+      "name": "weekly-business-review",
+      "description": "Generate a Weekly Business Review (WBR) from metrics and operating notes. Connects input metrics, output metrics, week-over-week variance, risks, issues, challenges, observations, and action items. Enforces that every negative variance maps to a specific cause or action. Use when the user mentions \"WBR\", \"weekly review\", \"metrics review\", \"ops review\", or when preparing a recurring metrics meeting.",
+      "category": "org-change",
+      "tags": [
+        "org-change",
+        "amazon-mechanisms",
+        "weekly",
+        "business"
+      ],
+      "source_repos": [
+        "ford-at-home/amazonian"
+      ],
+      "source_paths": [
+        "ford-at-home/amazonian:skills/05-weekly-business-review/SKILL.md"
+      ],
+      "install": "npx skills add ford-at-home/skills-library --skill weekly-business-review",
+      "last_updated": "2026-11-06",
+      "license": "MIT",
+      "related_project": "amazonian",
+      "path": "skills/org-change/weekly-business-review"
+    }
+  ]
+}

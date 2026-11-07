@@ -79,10 +79,10 @@ with open(log_file, 'r') as f:
 
 outputs = {}
 for line in log_content.split('\n'):
-    if 'SocraticBenchStack.' in line and '=' in line:
+    if '<stack-name>.' in line and '=' in line:
         parts = line.split('=', 1)
         if len(parts) == 2:
-            key = parts[0].strip().replace('SocraticBenchStack.', '')
+            key = parts[0].strip().replace('<stack-name>.', '')
             value = parts[1].strip()
             outputs[key] = value
 
@@ -101,7 +101,7 @@ if not SKIP_CHECKS:
     # Check Lambda function
     lambda_client = session.client('lambda', region_name=REGION)
     try:
-        response = lambda_client.get_function(FunctionName='SocraticBenchStack-ApiFunction')
+        response = lambda_client.get_function(FunctionName='<stack-name>')
         last_modified = response['Configuration']['LastModified']
         print(f"   ✅ API Lambda updated: {last_modified}")
     except Exception as e:
@@ -156,10 +156,10 @@ Step 1: Deploying stack (log: /tmp/cdk-deploy-deployment.log)...
 Step 2: Extracting stack outputs...
 ✅ Extracted 6 outputs:
    ApiKeyId: 0qwosllwel
-   ApiUrl: https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/
-   BucketName: socratic-bench-data-<aws-account-id>
+   ApiUrl: https://<api-gateway-host>/prod/
+   BucketName: <data-bucket>
    EventBusName: socratic-bench
-   TableName: socratic_core
+   TableName: <table-name>
    UIUrl: https://<cloudfront-domain>
 
 Step 3: Running health checks...
@@ -169,7 +169,7 @@ Step 3: Running health checks...
    ✅ S3 bucket accessible
 
 🎯 Deployment complete! Stack outputs saved.
-   API URL: https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/
+   API URL: https://<api-gateway-host>/prod/
    UI URL: https://<cloudfront-domain>
 ```
 

@@ -124,9 +124,9 @@ cd ~/Development/GitHub/socratic-ai-benchmarks
 
 # Trigger lambda with test event
 aws lambda invoke \
-  --function-name SocraticBenchStack-RunBenchmarkLambda \
+  --function-name <stack-name> \
   --payload '{"model_id": "google.gemini-3-pro-preview", "mode": "single"}' \
-  --profile mvp \
+  \
   /tmp/response.json
 
 # Check result
@@ -137,14 +137,14 @@ cat /tmp/response.json | jq '.'
 ```bash
 # Scan for new model results
 aws dynamodb query \
-  --table-name socratic_core \
+  --table-name <table-name> \
   --key-condition-expression "begins_with(PK, :prefix)" \
   --expression-attribute-values '{":prefix":{"S":"RUN#google.gemini"}}' \
-  --profile mvp | jq '.Items | length'
+  | jq '.Items | length'
 ```
 
 ### 4. Verify in Dashboard
-- Deploy changes: `cd serverless/infra && cdk deploy --profile mvp --require-approval never`
+- Deploy changes: `cd serverless/infra && cdk deploy --require-approval never`
 - Visit dashboard: https://<cloudfront-domain>/research.html
 - Check "Latest Model Rankings" chart for new model
 
@@ -198,19 +198,19 @@ EOF
 echo $GOOGLE_API_KEY
 
 # Check Bedrock access (if using AWS models)
-aws bedrock list-foundation-models --profile mvp --region us-east-1 | jq '.modelSummaries | length'
+aws bedrock list-foundation-models --region us-east-1 | jq '.modelSummaries | length'
 ```
 
 ### Results Not Appearing
 ```bash
 # Check Lambda logs
-aws logs tail /aws/lambda/SocraticBenchStack-RunBenchmarkLambda --profile mvp --follow
+aws logs tail /aws/lambda/<stack-name> --follow
 
 # Check for errors
 aws logs filter-log-events \
-  --log-group-name /aws/lambda/SocraticBenchStack-RunBenchmarkLambda \
+  --log-group-name /aws/lambda/<stack-name> \
   --filter-pattern "ERROR" \
-  --profile mvp
+ 
 ```
 
 ## Related Files

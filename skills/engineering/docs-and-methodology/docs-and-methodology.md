@@ -192,13 +192,13 @@ grep -n "<" serverless/ui/methodology.html | wc -l   # Count opening tags
 ### 3. Deploy
 ```bash
 cd serverless/infra
-cdk deploy --profile mvp --require-approval never
+cdk deploy --require-approval never
 ```
 
 ### 4. Verify Changes Live
 ```bash
 # Check CloudFront invalidation
-aws cloudfront list-invalidations --profile mvp --distribution-id E27XYZABC | jq '.Items | length'
+aws cloudfront list-invalidations --distribution-id E27XYZABC | jq '.Items | length'
 
 # Visit pages
 # https://<cloudfront-domain>/index.html

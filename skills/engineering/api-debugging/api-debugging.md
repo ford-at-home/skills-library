@@ -15,37 +15,37 @@ Diagnose and fix Lambda API endpoint issues, data transformation problems, and D
 ### 1. Check API Status
 ```bash
 # Test endpoint
-curl https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/latest-rankings
+curl https://<api-gateway-host>/prod/api/latest-rankings
 
 # Test with jq for parsing
-curl -s https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/latest-rankings | jq '.rankings | length'
+curl -s https://<api-gateway-host>/prod/api/latest-rankings | jq '.rankings | length'
 ```
 
 ### 2. Check Lambda Logs
 ```bash
 # List recent invocations
-aws logs tail /aws/lambda/SocraticBenchStack-ApiHandlerLambda --profile mvp --follow
+aws logs tail /aws/lambda/<stack-name> --follow
 
 # Search for errors
 aws logs filter-log-events \
-  --log-group-name /aws/lambda/SocraticBenchStack-ApiHandlerLambda \
+  --log-group-name /aws/lambda/<stack-name> \
   --filter-pattern "ERROR" \
-  --profile mvp
+ 
 ```
 
 ### 3. Test Individual Endpoints
 ```bash
 # Model comparison
-curl https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/model-comparison | jq '.models | length'
+curl https://<api-gateway-host>/prod/api/model-comparison | jq '.models | length'
 
 # Timeseries
-curl https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/timeseries | jq '.series | length'
+curl https://<api-gateway-host>/prod/api/timeseries | jq '.series | length'
 
 # Detailed results
-curl https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/detailed-results | jq '.results | length'
+curl https://<api-gateway-host>/prod/api/detailed-results | jq '.results | length'
 
 # Cost analysis
-curl https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/cost-analysis | jq '.scatter_data | length'
+curl https://<api-gateway-host>/prod/api/cost-analysis | jq '.scatter_data | length'
 ```
 
 ## Common Issues and Fixes
@@ -56,10 +56,10 @@ curl https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/cost-analys
 **Debug**:
 ```bash
 # Check if data exists
-aws dynamodb scan --table-name socratic_core \
+aws dynamodb scan --table-name <table-name> \
   --filter-expression "begins_with(PK, :prefix)" \
   --expression-attribute-values '{":prefix":{"S":"WEEK#"}}' \
-  --profile mvp | jq '.Items | length'
+  | jq '.Items | length'
 ```
 
 **Fix**:
@@ -115,7 +115,7 @@ python -c "import sys; sys.path.insert(0, 'serverless/lib'); from socratic_bench
 ### 3. Deploy
 ```bash
 cd serverless/infra
-cdk deploy --profile mvp --require-approval never
+cdk deploy --require-approval never
 ```
 
 ### 4. Test Endpoints
@@ -126,13 +126,13 @@ sleep 10
 # Test all endpoints
 for endpoint in model-comparison timeseries latest-rankings detailed-results cost-analysis; do
   echo "Testing: $endpoint"
-  curl -s https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/$endpoint | jq '.status // .error // "OK"'
+  curl -s https://<api-gateway-host>/prod/api/$endpoint | jq '.status // .error // "OK"'
 done
 ```
 
 ### 5. Check Logs
 ```bash
-aws logs tail /aws/lambda/SocraticBenchStack-ApiHandlerLambda --profile mvp --follow
+aws logs tail /aws/lambda/<stack-name> --follow
 ```
 
 ## Success Criteria

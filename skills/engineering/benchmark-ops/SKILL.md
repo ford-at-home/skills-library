@@ -59,7 +59,7 @@ python run_fidelity_tests.py --model anthropic.claude-3-5-sonnet-20241022-v2:0
 ```bash
 # Invoke Planner Lambda to start a benchmark run
 aws lambda invoke \
-  --function-name SocraticBenchStack-PlannerLambda \
+  --function-name <stack-name> \
   --payload '{}' \
   response.json
 ```
@@ -72,14 +72,14 @@ aws sqs get-queue-attributes \
   --attribute-names ApproximateNumberOfMessages
 
 # Watch Lambda logs
-aws logs tail /aws/lambda/SocraticBenchStack-RunnerLambda --follow
+aws logs tail /aws/lambda/<stack-name> --follow
 ```
 
 ### Query Results
 ```bash
 # Get latest weekly results
 aws dynamodb scan \
-  --table-name socratic_core \
+  --table-name <table-name> \
   --filter-expression "begins_with(PK, :week)" \
   --expression-attribute-values '{":week": {"S": "WEEK#2025-W45#"}}'
 ```
@@ -143,10 +143,10 @@ aws dynamodb scan \
 ### Export Results
 ```bash
 # Get run data from S3
-aws s3 cp s3://socratic-bench-data-<aws-account-id>/curated/runs/{run_id}.json - | jq .
+aws s3 cp s3://<data-bucket>/curated/runs/{run_id}.json - | jq .
 
 # Get judge scores
-aws s3 cp s3://socratic-bench-data-<aws-account-id>/raw/runs/{run_id}/judge_000.json - | jq .
+aws s3 cp s3://<data-bucket>/raw/runs/{run_id}/judge_000.json - | jq .
 ```
 
 ### Compare Models
@@ -155,7 +155,7 @@ aws s3 cp s3://socratic-bench-data-<aws-account-id>/raw/runs/{run_id}/judge_000.
 import requests
 
 response = requests.get(
-    "https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/model-comparison"
+    "https://<api-gateway-host>/prod/api/model-comparison"
 )
 
 models = response.json()["models"]

@@ -66,8 +66,8 @@ cd ~/Development/GitHub/socratic-ai-benchmarks/serverless/infra
 # Set Google API key if needed (usually already set in environment)
 export GOOGLE_API_KEY="<google-api-key>"
 
-# Deploy with --profile mvp (MANDATORY)
-cdk deploy --profile mvp --require-approval never
+# Deploy with (MANDATORY)
+cdk deploy --require-approval never
 ```
 
 ### 5. Verify Deployment
@@ -77,8 +77,8 @@ cdk deploy --profile mvp --require-approval never
 
 # Verify stack updated
 aws cloudformation describe-stacks \
-  --stack-name SocraticBenchStack \
-  --profile mvp \
+  --stack-name <stack-name> \
+  \
   --query 'Stacks[0].StackStatus'
 ```
 
@@ -96,10 +96,10 @@ git log --oneline -3
 ### 7. Verify Live Deployment
 ```bash
 # Check CloudFront distribution
-aws cloudfront list-distributions --profile mvp | grep -A2 "d3ic7ds776p9cq"
+aws cloudfront list-distributions | grep -A2 "d3ic7ds776p9cq"
 
 # Test API endpoints
-curl https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/latest-rankings | jq '.rankings | length'
+curl https://<api-gateway-host>/prod/api/latest-rankings | jq '.rankings | length'
 
 # Visit live site
 # https://<cloudfront-domain>/
@@ -117,15 +117,15 @@ curl https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/latest-rank
 ### CDK Deploy Fails
 ```bash
 # Check AWS credentials
-aws sts get-caller-identity --profile mvp
+aws sts get-caller-identity
 
 # Verify profile exists
-aws configure list --profile mvp
+aws configure list
 
 # Check CloudFormation for errors
 aws cloudformation describe-stack-events \
-  --stack-name SocraticBenchStack \
-  --profile mvp | jq '.StackEvents[0:5]'
+  --stack-name <stack-name> \
+  | jq '.StackEvents[0:5]'
 ```
 
 ### Git Push Fails

@@ -54,7 +54,7 @@ import statistics
 # Configuration
 PROFILE = "mvp"
 REGION = "us-east-1"
-BUCKET_NAME = "socratic-bench-data-<aws-account-id>"
+BUCKET_NAME = "<data-bucket>"
 COUNT = int(os.getenv("COUNT", "10"))
 MODEL_FILTER = os.getenv("MODEL", None)
 

@@ -66,11 +66,11 @@ FOLLOW = os.getenv("FOLLOW", "false").lower() == "true"
 
 # Map short names to full Lambda function names
 FUNCTION_MAP = {
-    "ApiFunction": "SocraticBenchStack-ApiFunction",
-    "JudgeFunction": "SocraticBenchStack-JudgeFunction",
-    "RunnerFunction": "SocraticBenchStack-RunnerFunction",
-    "PlannerFunction": "SocraticBenchStack-PlannerFunction",
-    "CuratorFunction": "SocraticBenchStack-CuratorFunction",
+    "ApiFunction": "<stack-name>",
+    "JudgeFunction": "<stack-name>",
+    "RunnerFunction": "<stack-name>",
+    "PlannerFunction": "<stack-name>",
+    "CuratorFunction": "<stack-name>",
 }
 
 full_function_name = FUNCTION_MAP.get(FUNCTION_NAME, FUNCTION_NAME)
@@ -186,7 +186,7 @@ print()
 ## Output
 
 ```
-📋 Streaming logs for SocraticBenchStack-ApiFunction...
+📋 Streaming logs for <stack-name>...
 
 Time range: 10:45:23 - 10:55:23 UTC
 

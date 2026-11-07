@@ -22,10 +22,10 @@ Diagnose and fix chart rendering issues, data scaling problems, and visualizatio
 ### 2. Check API Response Format
 ```bash
 # Test timeseries endpoint
-curl https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/timeseries | jq '.series[0]'
+curl https://<api-gateway-host>/prod/api/timeseries | jq '.series[0]'
 
 # Test rankings endpoint
-curl https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod/api/latest-rankings | jq '.rankings[0]'
+curl https://<api-gateway-host>/prod/api/latest-rankings | jq '.rankings[0]'
 ```
 
 ### 3. Verify Score Scaling
@@ -75,7 +75,7 @@ scales: {
 3. Copy API response to text file for comparison
 
 ### After Fix
-1. Deploy UI: `cd serverless/infra && cdk deploy --profile mvp --require-approval never`
+1. Deploy UI: `cd serverless/infra && cdk deploy --require-approval never`
 2. Hard refresh browser: Cmd+Shift+R
 3. Compare new chart with before screenshot
 4. Verify all models appear

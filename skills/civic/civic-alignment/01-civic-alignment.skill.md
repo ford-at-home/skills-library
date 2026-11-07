@@ -244,7 +244,7 @@ Once `01` artifacts are at `draft` or higher:
 ## Example invocation
 
 > "Run civic alignment. The anchor is Richmond's Mayor's Action Plan
-> (May 2025). The sponsor is Michael Kolbe in the Mayor's Office of
+> (May 2025). The sponsor is the sponsor (named in your own artifact) in the Mayor's Office of
 > Strategic Initiatives."
 
 Expected steps:
@@ -260,7 +260,7 @@ Expected steps:
    commitment record.
 5. Skill asks for success: three goals, each measurable.
 6. Skill writes all three artifacts at `needs-review` with
-   `review_owner: Michael Kolbe (Mayor's Office of Strategic
+   `review_owner: the sponsor (named in your own artifact) (Mayor's Office of Strategic
    Initiatives)`.
 7. Reports: "01 complete (pending review). Next: 02 (Event Charter)."
 

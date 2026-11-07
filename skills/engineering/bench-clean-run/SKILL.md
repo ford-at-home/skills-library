@@ -10,8 +10,8 @@ Automated workflow to clean all stale data from DynamoDB and S3, then trigger a 
 ## Description
 
 This skill automates the repetitive task of clearing old benchmark data and starting fresh runs. It:
-1. Deletes all items from DynamoDB table `socratic_core`
-2. Deletes all files from S3 bucket `socratic-bench-data-*` (raw/ and curated/ prefixes)
+1. Deletes all items from DynamoDB table `<table-name>`
+2. Deletes all files from S3 bucket `<data-bucket>*` (raw/ and curated/ prefixes)
 3. Triggers a fresh planner run via API
 4. Returns the manifest ID for tracking
 
@@ -42,8 +42,8 @@ dynamodb = session.resource('dynamodb', region_name='us-east-1')
 s3 = session.client('s3', region_name='us-east-1')
 
 # Get configuration
-table = dynamodb.Table('socratic_core')
-api_url = "https://wcyf23uxxe.execute-api.us-east-1.amazonaws.com/prod"
+table = dynamodb.Table('<table-name>')
+api_url = "https://<api-gateway-host>/prod"
 
 print("🧹 Starting clean run workflow...\n")
 
@@ -73,7 +73,7 @@ print("Step 2: Deleting S3 objects...")
 buckets_response = s3.list_buckets()
 bucket_name = None
 for bucket in buckets_response['Buckets']:
-    if bucket['Name'].startswith('socratic-bench-data-'):
+    if bucket['Name'].startswith('<data-bucket>'):
         bucket_name = bucket['Name']
         break
 
@@ -125,7 +125,7 @@ Step 1: Deleting DynamoDB items...
 ✅ Deleted 210 items from DynamoDB
 
 Step 2: Deleting S3 objects...
-✅ Deleted 847 objects from S3 bucket socratic-bench-data-<aws-account-id>
+✅ Deleted 847 objects from S3 bucket <data-bucket>
 
 Step 3: Triggering fresh planner run...
 ✅ Triggered planner run: M-20251108-727952e3f7a8

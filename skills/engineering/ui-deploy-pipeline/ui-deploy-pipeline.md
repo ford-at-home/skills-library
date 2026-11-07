@@ -27,7 +27,7 @@ git diff serverless/ui/
 ### 2. Deploy to AWS
 ```bash
 cd ~/Development/GitHub/socratic-ai-benchmarks/serverless/infra
-cdk deploy --profile mvp --require-approval never
+cdk deploy --require-approval never
 ```
 
 ### 3. Commit and Push
@@ -42,7 +42,7 @@ git push origin main
 After deployment, CloudFront invalidation is automatic via CDK. Verify by:
 ```bash
 # Check distribution status
-aws cloudfront list-distributions --profile mvp | grep -A2 "d3ic7ds776p9cq"
+aws cloudfront list-distributions | grep -A2 "d3ic7ds776p9cq"
 
 # Force refresh in browser: Cmd+Shift+R (Mac) or Ctrl+Shift+R (Windows)
 ```
@@ -56,14 +56,14 @@ aws cloudfront list-distributions --profile mvp | grep -A2 "d3ic7ds776p9cq"
 ## Common Issues
 
 ### CDK Deploy Fails
-- Verify AWS profile: `aws sts get-caller-identity --profile mvp`
+- Verify AWS profile: `aws sts get-caller-identity`
 - Check CDK version: `cdk --version`
 - Check for uncommitted changes in infra code
 
 ### Changes Not Visible
 - Clear browser cache: Hard refresh (Cmd+Shift+R)
 - Check CloudFront invalidation status
-- Verify files uploaded to S3: `aws s3 ls s3://socratic-bench-ui-{account}/ --profile mvp`
+- Verify files uploaded to S3: `aws s3 ls s3://socratic-bench-ui-{account}/`
 
 ### Git Push Fails
 - Ensure main branch is up to date: `git fetch origin && git rebase origin/main`
@@ -71,5 +71,5 @@ aws cloudfront list-distributions --profile mvp | grep -A2 "d3ic7ds776p9cq"
 - Verify GitHub token is valid
 
 ## Related Commands
-- `aws s3 ls s3://socratic-bench-ui-<aws-account-id>/ --profile mvp` - List UI files
-- `aws cloudfront list-invalidations --profile mvp --distribution-id E27XYZABC` - Check invalidations
+- `aws s3 ls s3://socratic-bench-ui-<aws-account-id>/` - List UI files
+- `aws cloudfront list-invalidations --distribution-id E27XYZABC` - Check invalidations
